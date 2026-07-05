@@ -50,6 +50,13 @@
   .tbtn{border:1px solid var(--line);background:#fff;border-radius:20px;
     padding:8px 15px;font-size:13.5px;color:var(--ink);cursor:pointer;font-weight:600}
   .tbtn:active{background:#eef4ff}
+  .tbtn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+  /* full-text reading mode */
+  .fulltext{font-size:17.5px;line-height:2;padding:6px 2px}
+  .fulltext .zhblock{margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);
+    color:var(--sub);font-size:15.5px;line-height:1.95;display:none}
+  .fulltext.showzh .zhblock{display:block}
 
   /* collapsible section */
   .sec-h{display:flex;align-items:center;justify-content:space-between;
@@ -152,21 +159,47 @@ function renderStory(st){
   ah.textContent = '💡 先只聽、不看字，再邊聽邊讀。慢速版可以用來一句一句寫下來（聽寫）。';
   card.appendChild(ah);
 
-  // toolbar
-  const tb = document.createElement('div'); tb.className='toolbar';
+  // mode toggle: 全文 / 逐句
+  const modeRow = document.createElement('div'); modeRow.className='toolbar';
+  const bFull = document.createElement('button'); bFull.className='tbtn active'; bFull.textContent='📖 全文';
+  const bSent = document.createElement('button'); bSent.className='tbtn'; bSent.textContent='逐句對照';
+  modeRow.appendChild(bFull); modeRow.appendChild(bSent);
+  card.appendChild(modeRow);
+
+  // --- 全文模式 ---
+  const full = document.createElement('div'); full.className='fulltext';
+  const enHtml = st.sentences.map(s=> s.en.replace(/\*(.+?)\*/g,'<span class="v">$1</span>')).join(' ');
+  const zhHtml = st.sentences.map(s=> s.zh).join('');
+  full.innerHTML = `<div class="enblock">${enHtml}</div><div class="zhblock">${zhHtml}</div>`;
+  const fullTools = document.createElement('div'); fullTools.className='toolbar';
+  const bZh = document.createElement('button'); bZh.className='tbtn'; bZh.textContent='顯示全文中譯';
+  fullTools.appendChild(bZh);
+  bZh.onclick = ()=>{ full.classList.toggle('showzh');
+    bZh.textContent = full.classList.contains('showzh') ? '隱藏中譯' : '顯示全文中譯'; };
+
+  // --- 逐句模式 ---
+  const box = document.createElement('div'); box.style.display='none';
+  st.sentences.forEach(s=> box.appendChild(renderSentence(s)));
+  const sentTools = document.createElement('div'); sentTools.className='toolbar'; sentTools.style.display='none';
   const bAll = document.createElement('button'); bAll.className='tbtn'; bAll.textContent='顯示全部中文';
   const bNone= document.createElement('button'); bNone.className='tbtn'; bNone.textContent='隱藏全部中文';
-  tb.appendChild(bAll); tb.appendChild(bNone);
-  card.appendChild(tb);
-
-  // sentences
-  const box = document.createElement('div');
-  st.sentences.forEach(s=> box.appendChild(renderSentence(s)));
-  card.appendChild(box);
+  sentTools.appendChild(bAll); sentTools.appendChild(bNone);
   bAll.onclick =()=> box.querySelectorAll('.s').forEach(e=>e.classList.add('open'));
   bNone.onclick=()=> box.querySelectorAll('.s').forEach(e=>e.classList.remove('open'));
+
+  card.appendChild(fullTools); card.appendChild(full);
+  card.appendChild(sentTools); card.appendChild(box);
+
   const tip = document.createElement('div'); tip.className='hint-audio';
-  tip.style.marginTop='8px'; tip.textContent='👆 點任一句可以看／收中文翻譯。紅字就是這篇的重點動詞。';
+  tip.style.marginTop='10px';
+  const setTip = ()=> tip.textContent = full.style.display==='none'
+    ? '👆 點任一句可以看／收中文翻譯。紅字就是這篇的重點動詞。'
+    : '👆「全文」先讀順整篇；紅字是重點動詞。需要逐句對照中文時切到「逐句對照」。';
+  function showFull(){ bFull.classList.add('active'); bSent.classList.remove('active');
+    full.style.display=''; fullTools.style.display=''; box.style.display='none'; sentTools.style.display='none'; setTip(); }
+  function showSent(){ bSent.classList.add('active'); bFull.classList.remove('active');
+    full.style.display='none'; fullTools.style.display='none'; box.style.display=''; sentTools.style.display=''; setTip(); }
+  bFull.onclick=showFull; bSent.onclick=showSent; setTip();
   card.appendChild(tip);
   app.appendChild(card);
 
