@@ -83,6 +83,26 @@
   .q .reveal{margin-top:9px;font-size:13px;color:var(--accent);font-weight:700;cursor:pointer}
 
   footer{text-align:center;color:var(--sub);font-size:12px;margin-top:22px;padding:0 20px;line-height:1.6}
+
+  /* menu */
+  .menu-item{display:flex;align-items:center;gap:12px;padding:14px 15px;border-radius:14px;
+    background:var(--card);box-shadow:var(--shadow);margin-top:12px;cursor:pointer;transition:transform .1s}
+  .menu-item:active{transform:scale(.99);background:#f2f7ff}
+  .menu-item .num{flex:0 0 34px;height:34px;border-radius:50%;background:#eef4ff;color:var(--accent);
+    font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px}
+  .menu-item .mtxt{flex:1;min-width:0}
+  .menu-item .mt{font-weight:800;font-size:16px}
+  .menu-item .mz{color:var(--sub);font-size:13px;margin-top:1px}
+  .menu-item .arrow{color:var(--sub);font-size:20px}
+  .badges{margin-top:5px;display:flex;gap:6px;flex-wrap:wrap}
+  .badge{font-size:11px;padding:2px 8px;border-radius:20px;font-weight:700}
+  .b-narrative{background:#eafaf0;color:#1b7a45}
+  .b-dialogue{background:#eef0ff;color:#5145d6}
+  .b-joke{background:#fff2e6;color:#c8641a}
+  .b-grp{background:#f0f2f5;color:#6b7686}
+  .backbtn{display:inline-flex;align-items:center;gap:6px;background:none;border:none;
+    color:var(--accent);font-size:15px;font-weight:700;padding:8px 0;cursor:pointer;margin-top:12px}
+  .menu-intro{color:var(--sub);font-size:13.5px;margin:14px 2px 2px;line-height:1.7}
 </style>
 </head>
 <body>
@@ -142,9 +162,38 @@ function section(title, closedByDefault){
   return {sec, body};
 }
 
-function renderStory(st){
+const GENRE = {narrative:['記敘','b-narrative'], dialogue:['對話','b-dialogue'], joke:['笑話','b-joke']};
+
+function renderMenu(){
+  app.innerHTML='';
+  window.scrollTo(0,0);
   document.getElementById('hTitle').textContent = DATA.meta.title + ' 🎧';
   document.getElementById('hSub').textContent = DATA.meta.subtitle;
+  const intro = document.createElement('div'); intro.className='menu-intro';
+  intro.innerHTML = `共 ${DATA.stories.length} 篇故事，每篇專攻一組動詞。點一篇開始聽讀 👇`;
+  app.appendChild(intro);
+  DATA.stories.forEach((st,i)=>{
+    const g = GENRE[st.genre] || ['故事','b-grp'];
+    const item = document.createElement('div'); item.className='menu-item';
+    item.innerHTML = `<div class="num">${i+1}</div>
+      <div class="mtxt"><div class="mt">${st.title}</div><div class="mz">${st.zh_title}</div>
+      <div class="badges"><span class="badge ${g[1]}">${g[0]}</span>
+      <span class="badge b-grp">${st.verbs.length} 動詞</span></div></div>
+      <div class="arrow">›</div>`;
+    item.addEventListener('click', ()=> renderStory(st));
+    app.appendChild(item);
+  });
+}
+
+function renderStory(st){
+  app.innerHTML='';
+  window.scrollTo(0,0);
+  document.getElementById('hTitle').textContent = st.title;
+  document.getElementById('hSub').textContent = st.zh_title;
+  const back = document.createElement('button'); back.className='backbtn';
+  back.innerHTML = '‹ 返回故事列表';
+  back.addEventListener('click', ()=>{ document.querySelectorAll('audio').forEach(a=>a.pause()); renderMenu(); });
+  app.appendChild(back);
 
   // story card
   const card = document.createElement('div'); card.className='card';
@@ -152,7 +201,7 @@ function renderStory(st){
 
   // audio
   const arow = document.createElement('div'); arow.className='audio-row';
-  arow.appendChild(audioButton('正常速','約 43 秒', st.audio_normal, 'normal'));
+  arow.appendChild(audioButton('正常速','正常語速', st.audio_normal, 'normal'));
   arow.appendChild(audioButton('慢速','適合聽寫', st.audio_slow, 'slow'));
   card.appendChild(arow);
   const ah = document.createElement('div'); ah.className='hint-audio';
@@ -231,7 +280,7 @@ function renderStory(st){
 }
 
 let DATA = null;
-fetch('stories.json').then(r=>r.json()).then(d=>{ DATA=d; renderStory(d.stories[0]); })
+fetch('stories.json').then(r=>r.json()).then(d=>{ DATA=d; renderMenu(); })
 .catch(e=>{ app.innerHTML='<div class="card">載入失敗：'+e+'</div>'; });
 </script>
 </body>

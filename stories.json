@@ -1,68 +1,2014 @@
 {
-  "meta": {
-    "title": "動詞故事聽讀",
-    "subtitle": "邊聽、邊讀、邊記動詞三態",
-    "grade": "七年級",
-    "verbs_ref": "verbs_grade7_v1.json",
-    "human_verified": true,
-    "verified_by": "Fable 5 自撰故事 + 動詞形態對照 verbs_grade7_v1.json 2026-07-06",
-    "schema_version": 1
-  },
-  "stories": [
+ "meta": {
+  "title": "動詞故事聽讀",
+  "subtitle": "邊聽、邊讀、邊記動詞三態",
+  "grade": "七年級",
+  "verbs_ref": "verbs_grade7_v1.json",
+  "human_verified": true,
+  "verified_by": "Fable 5 自撰故事 + 動詞形態對照 verbs_grade7_v1.json 2026-07-06",
+  "schema_version": 1,
+  "count": 14
+ },
+ "stories": [
+  {
+   "id": "the-big-race",
+   "title": "The Big Race",
+   "zh_title": "那場大賽跑",
+   "audio_normal": "audio/story1_normal.mp3",
+   "audio_slow": "audio/story1_slow.mp3",
+   "sentences": [
     {
-      "id": "the-big-race",
-      "title": "The Big Race",
-      "zh_title": "那場大賽跑",
-      "audio_normal": "audio/story1_normal.mp3",
-      "audio_slow": "audio/story1_slow.mp3",
-      "sentences": [
-        {"en": "Last Saturday *was* our school's sports day.", "zh": "上週六是我們學校的運動會。"},
-        {"en": "I *woke* up early because I *felt* nervous.", "zh": "我很早就醒來，因為我覺得很緊張。"},
-        {"en": "I *was* in the eight-hundred-meter race.", "zh": "我要參加八百公尺賽跑。"},
-        {"en": "My mom *made* a big breakfast, but I only *drank* some milk.", "zh": "我媽做了豐盛的早餐，但我只喝了一點牛奶。"},
-        {"en": "At school, I *met* my best friend, Kevin.", "zh": "到了學校，我遇到我最好的朋友 Kevin。"},
-        {"en": "He *brought* me a lucky bracelet and *said*, \"You will win!\"", "zh": "他帶了一條幸運手環給我，還說：「你會贏！」"},
-        {"en": "I *thought* he was just being kind.", "zh": "我以為他只是在說好聽話。"},
-        {"en": "When the race *began*, I *ran* as fast as I could.", "zh": "比賽一開始，我就盡全力地跑。"},
-        {"en": "Halfway through, I *fell* down and *hurt* my knee.", "zh": "跑到一半，我跌倒了，膝蓋受傷。"},
-        {"en": "Everyone *saw* it, and I wanted to give up.", "zh": "大家都看到了，我好想放棄。"},
-        {"en": "But then I *heard* my class shouting my name.", "zh": "但接著我聽見全班在喊我的名字。"},
-        {"en": "So I *stood* up and *ran* again.", "zh": "所以我站起來，再次往前跑。"},
-        {"en": "I did not *come* first. I *came* fourth.", "zh": "我沒有得第一，我是第四名。"},
-        {"en": "But when I crossed the line, my whole class *ran* to me.", "zh": "但當我衝過終點線，全班都朝我跑來。"},
-        {"en": "They *caught* me, and Kevin *gave* me a big smile.", "zh": "他們扶住我，Kevin 給了我一個大大的微笑。"},
-        {"en": "That day, I *lost* the race, but I *found* something better.", "zh": "那天，我輸了比賽，卻找到了更棒的東西。"},
-        {"en": "I finally *understood* what real friends are.", "zh": "我終於明白了真正的朋友是什麼。"}
-      ],
-      "verbs": [
-        {"v": "be", "ved": "was / were", "vpp": "been", "zh": "是"},
-        {"v": "wake", "ved": "woke", "vpp": "woken", "zh": "醒來"},
-        {"v": "feel", "ved": "felt", "vpp": "felt", "zh": "感覺"},
-        {"v": "make", "ved": "made", "vpp": "made", "zh": "製作"},
-        {"v": "drink", "ved": "drank", "vpp": "drunk", "zh": "喝"},
-        {"v": "meet", "ved": "met", "vpp": "met", "zh": "遇見"},
-        {"v": "bring", "ved": "brought", "vpp": "brought", "zh": "帶來"},
-        {"v": "say", "ved": "said", "vpp": "said", "zh": "說"},
-        {"v": "think", "ved": "thought", "vpp": "thought", "zh": "想；認為"},
-        {"v": "begin", "ved": "began", "vpp": "begun", "zh": "開始"},
-        {"v": "run", "ved": "ran", "vpp": "run", "zh": "跑"},
-        {"v": "fall", "ved": "fell", "vpp": "fallen", "zh": "跌倒；落下"},
-        {"v": "hurt", "ved": "hurt", "vpp": "hurt", "zh": "使受傷"},
-        {"v": "see", "ved": "saw", "vpp": "seen", "zh": "看見"},
-        {"v": "hear", "ved": "heard", "vpp": "heard", "zh": "聽見"},
-        {"v": "stand", "ved": "stood", "vpp": "stood", "zh": "站"},
-        {"v": "come", "ved": "came", "vpp": "come", "zh": "來"},
-        {"v": "catch", "ved": "caught", "vpp": "caught", "zh": "抓住；接住"},
-        {"v": "give", "ved": "gave", "vpp": "given", "zh": "給"},
-        {"v": "lose", "ved": "lost", "vpp": "lost", "zh": "輸；失去"},
-        {"v": "find", "ved": "found", "vpp": "found", "zh": "找到"},
-        {"v": "understand", "ved": "understood", "vpp": "understood", "zh": "了解"}
-      ],
-      "questions": [
-        {"q": "Why did the boy only drink some milk in the morning?", "hint": "用 felt 回答", "a": "Because he felt nervous. (因為他覺得緊張。)"},
-        {"q": "What did the boy do after he fell down?", "hint": "用 stood、ran 回答", "a": "He stood up and ran again. (他站起來，再次往前跑。)"},
-        {"q": "He lost the race, but what did he find?", "hint": "用 found 回答", "a": "He found what real friends are. (他找到了真正的朋友是什麼／找到了真正的友情。)"}
-      ]
+     "en": "Last Saturday *was* our school's sports day.",
+     "zh": "上週六是我們學校的運動會。"
+    },
+    {
+     "en": "I *woke* up early because I *felt* nervous.",
+     "zh": "我很早就醒來，因為我覺得很緊張。"
+    },
+    {
+     "en": "I *was* in the eight-hundred-meter race.",
+     "zh": "我要參加八百公尺賽跑。"
+    },
+    {
+     "en": "My mom *made* a big breakfast, but I only *drank* some milk.",
+     "zh": "我媽做了豐盛的早餐，但我只喝了一點牛奶。"
+    },
+    {
+     "en": "At school, I *met* my best friend, Kevin.",
+     "zh": "到了學校，我遇到我最好的朋友 Kevin。"
+    },
+    {
+     "en": "He *brought* me a lucky bracelet and *said*, \"You will win!\"",
+     "zh": "他帶了一條幸運手環給我，還說：「你會贏！」"
+    },
+    {
+     "en": "I *thought* he was just being kind.",
+     "zh": "我以為他只是在說好聽話。"
+    },
+    {
+     "en": "When the race *began*, I *ran* as fast as I could.",
+     "zh": "比賽一開始，我就盡全力地跑。"
+    },
+    {
+     "en": "Halfway through, I *fell* down and *hurt* my knee.",
+     "zh": "跑到一半，我跌倒了，膝蓋受傷。"
+    },
+    {
+     "en": "Everyone *saw* it, and I wanted to give up.",
+     "zh": "大家都看到了，我好想放棄。"
+    },
+    {
+     "en": "But then I *heard* my class shouting my name.",
+     "zh": "但接著我聽見全班在喊我的名字。"
+    },
+    {
+     "en": "So I *stood* up and *ran* again.",
+     "zh": "所以我站起來，再次往前跑。"
+    },
+    {
+     "en": "I did not *come* first. I *came* fourth.",
+     "zh": "我沒有得第一，我是第四名。"
+    },
+    {
+     "en": "But when I crossed the line, my whole class *ran* to me.",
+     "zh": "但當我衝過終點線，全班都朝我跑來。"
+    },
+    {
+     "en": "They *caught* me, and Kevin *gave* me a big smile.",
+     "zh": "他們扶住我，Kevin 給了我一個大大的微笑。"
+    },
+    {
+     "en": "That day, I *lost* the race, but I *found* something better.",
+     "zh": "那天，我輸了比賽，卻找到了更棒的東西。"
+    },
+    {
+     "en": "I finally *understood* what real friends are.",
+     "zh": "我終於明白了真正的朋友是什麼。"
     }
-  ]
+   ],
+   "verbs": [
+    {
+     "v": "be",
+     "ved": "was / were",
+     "vpp": "been",
+     "zh": "是"
+    },
+    {
+     "v": "wake",
+     "ved": "woke",
+     "vpp": "woken",
+     "zh": "醒來"
+    },
+    {
+     "v": "feel",
+     "ved": "felt",
+     "vpp": "felt",
+     "zh": "感覺"
+    },
+    {
+     "v": "make",
+     "ved": "made",
+     "vpp": "made",
+     "zh": "製作"
+    },
+    {
+     "v": "drink",
+     "ved": "drank",
+     "vpp": "drunk",
+     "zh": "喝"
+    },
+    {
+     "v": "meet",
+     "ved": "met",
+     "vpp": "met",
+     "zh": "遇見"
+    },
+    {
+     "v": "bring",
+     "ved": "brought",
+     "vpp": "brought",
+     "zh": "帶來"
+    },
+    {
+     "v": "say",
+     "ved": "said",
+     "vpp": "said",
+     "zh": "說"
+    },
+    {
+     "v": "think",
+     "ved": "thought",
+     "vpp": "thought",
+     "zh": "想；認為"
+    },
+    {
+     "v": "begin",
+     "ved": "began",
+     "vpp": "begun",
+     "zh": "開始"
+    },
+    {
+     "v": "run",
+     "ved": "ran",
+     "vpp": "run",
+     "zh": "跑"
+    },
+    {
+     "v": "fall",
+     "ved": "fell",
+     "vpp": "fallen",
+     "zh": "跌倒；落下"
+    },
+    {
+     "v": "hurt",
+     "ved": "hurt",
+     "vpp": "hurt",
+     "zh": "使受傷"
+    },
+    {
+     "v": "see",
+     "ved": "saw",
+     "vpp": "seen",
+     "zh": "看見"
+    },
+    {
+     "v": "hear",
+     "ved": "heard",
+     "vpp": "heard",
+     "zh": "聽見"
+    },
+    {
+     "v": "stand",
+     "ved": "stood",
+     "vpp": "stood",
+     "zh": "站"
+    },
+    {
+     "v": "come",
+     "ved": "came",
+     "vpp": "come",
+     "zh": "來"
+    },
+    {
+     "v": "catch",
+     "ved": "caught",
+     "vpp": "caught",
+     "zh": "抓住；接住"
+    },
+    {
+     "v": "give",
+     "ved": "gave",
+     "vpp": "given",
+     "zh": "給"
+    },
+    {
+     "v": "lose",
+     "ved": "lost",
+     "vpp": "lost",
+     "zh": "輸；失去"
+    },
+    {
+     "v": "find",
+     "ved": "found",
+     "vpp": "found",
+     "zh": "找到"
+    },
+    {
+     "v": "understand",
+     "ved": "understood",
+     "vpp": "understood",
+     "zh": "了解"
+    }
+   ],
+   "questions": [
+    {
+     "q": "Why did the boy only drink some milk in the morning?",
+     "hint": "用 felt 回答",
+     "a": "Because he felt nervous. (因為他覺得緊張。)"
+    },
+    {
+     "q": "What did the boy do after he fell down?",
+     "hint": "用 stood、ran 回答",
+     "a": "He stood up and ran again. (他站起來，再次往前跑。)"
+    },
+    {
+     "q": "He lost the race, but what did he find?",
+     "hint": "用 found 回答",
+     "a": "He found what real friends are. (他找到了真正的朋友是什麼／找到了真正的友情。)"
+    }
+   ],
+   "group": "mixed",
+   "genre": "narrative"
+  },
+  {
+   "id": "the-day-the-storm-hit",
+   "title": "The Day the Storm Hit Our Town",
+   "zh_title": "風暴侵襲的那一天",
+   "audio_normal": "audio/the-day-the-storm-hit_normal.mp3",
+   "audio_slow": "audio/the-day-the-storm-hit_slow.mp3",
+   "group": "aaa",
+   "genre": "narrative",
+   "sentences": [
+    {
+     "en": "Last August, a big storm *hit* our small town.",
+     "zh": "去年八月，一場大風暴突然侵襲了我們的小鎮。"
+    },
+    {
+     "en": "The radio station *broadcast* a warning early in the morning, but we were already outside playing.",
+     "zh": "廣播電台一大早就播出了警報，但我們已經在外頭玩了。"
+    },
+    {
+     "en": "Dark clouds *spread* across the sky in just a few minutes.",
+     "zh": "烏雲在短短幾分鐘內便擴散至整片天空。"
+    },
+    {
+     "en": "The rain *wet* my whole body before I even reached the front door.",
+     "zh": "我還沒跑到大門口，雨水就把我全身淋濕了。"
+    },
+    {
+     "en": "I rushed inside, and Mom *shut* all the windows quickly.",
+     "zh": "我衝進屋裡，媽媽迅速把所有窗戶都關上。"
+    },
+    {
+     "en": "She *put* some old towels along the bottom of the door.",
+     "zh": "她把幾條舊毛巾塞在門縫下面。"
+    },
+    {
+     "en": "Suddenly, a tree branch *burst* through our neighbor's car window with a loud crack.",
+     "zh": "突然間，一根樹枝嘩啦一聲衝破了鄰居的車窗。"
+    },
+    {
+     "en": "My little sister *cut* her finger on a piece of broken glass.",
+     "zh": "我妹妹被一片碎玻璃割傷了手指。"
+    },
+    {
+     "en": "It *hurt* badly, and she started to cry.",
+     "zh": "傷口很痛，她哭了起來。"
+    },
+    {
+     "en": "Dad quickly *set* the first aid kit on the table.",
+     "zh": "爸爸迅速把急救箱放到桌上。"
+    },
+    {
+     "en": "Mom *read* the instructions on the box out loud.",
+     "zh": "媽媽大聲朗讀盒子上的使用說明。"
+    },
+    {
+     "en": "The storm *cost* our family a lot of money to fix the house.",
+     "zh": "這場風暴讓我們家花了很多錢才把房子修好。"
+    },
+    {
+     "en": "It also *upset* many other families in our neighborhood.",
+     "zh": "它也讓附近許多家庭感到心煩意亂。"
+    },
+    {
+     "en": "My sister *quit* trying to clean up and just sat down on the couch.",
+     "zh": "妹妹放棄了整理，乾脆坐在沙發上。"
+    },
+    {
+     "en": "Dad *let* us all sleep in the living room that night.",
+     "zh": "那天晚上爸爸讓我們全都睡在客廳裡。"
+    },
+    {
+     "en": "By the next morning, the damage had *spread* to almost every street in town.",
+     "zh": "到了隔天早上，損壞已經擴散到鎮上幾乎每一條街。"
+    }
+   ],
+   "verbs": [
+    {
+     "v": "broadcast",
+     "ved": "broadcast",
+     "vpp": "broadcast",
+     "zh": "廣播"
+    },
+    {
+     "v": "burst",
+     "ved": "burst",
+     "vpp": "burst",
+     "zh": "突然爆開"
+    },
+    {
+     "v": "cost",
+     "ved": "cost",
+     "vpp": "cost",
+     "zh": "花費"
+    },
+    {
+     "v": "cut",
+     "ved": "cut",
+     "vpp": "cut",
+     "zh": "切"
+    },
+    {
+     "v": "hit",
+     "ved": "hit",
+     "vpp": "hit",
+     "zh": "打；侵襲"
+    },
+    {
+     "v": "hurt",
+     "ved": "hurt",
+     "vpp": "hurt",
+     "zh": "傷害；痛"
+    },
+    {
+     "v": "let",
+     "ved": "let",
+     "vpp": "let",
+     "zh": "允許"
+    },
+    {
+     "v": "put",
+     "ved": "put",
+     "vpp": "put",
+     "zh": "放置"
+    },
+    {
+     "v": "quit",
+     "ved": "quit",
+     "vpp": "quit",
+     "zh": "放棄；辭"
+    },
+    {
+     "v": "read",
+     "ved": "read",
+     "vpp": "read",
+     "zh": "閱讀"
+    },
+    {
+     "v": "set",
+     "ved": "set",
+     "vpp": "set",
+     "zh": "安置；安裝"
+    },
+    {
+     "v": "shut",
+     "ved": "shut",
+     "vpp": "shut",
+     "zh": "關閉"
+    },
+    {
+     "v": "spread",
+     "ved": "spread",
+     "vpp": "spread",
+     "zh": "展開；擴散"
+    },
+    {
+     "v": "upset",
+     "ved": "upset",
+     "vpp": "upset",
+     "zh": "使煩惱"
+    },
+    {
+     "v": "wet",
+     "ved": "wet",
+     "vpp": "wet",
+     "zh": "弄濕"
+    }
+   ],
+   "questions": [
+    {
+     "q": "What did the radio station do early in the morning?",
+     "hint": "用 broadcast 回答",
+     "a": "The radio station *broadcast* a warning early in the morning. (廣播電台一大早就播出了警報。)"
+    },
+    {
+     "q": "How did the sister get hurt?",
+     "hint": "用 cut、hurt 回答",
+     "a": "She *cut* her finger on a piece of broken glass, and it *hurt* badly. (她被碎玻璃割傷了手指，傷口很痛。)"
+    },
+    {
+     "q": "What did Dad do for the family that night?",
+     "hint": "用 let 回答",
+     "a": "Dad *let* them all sleep in the living room. (爸爸讓他們全都睡在客廳裡。)"
+    }
+   ]
+  },
+  {
+   "id": "bennys-big-run",
+   "title": "Benny's Big Run",
+   "zh_title": "班尼的大衝刺",
+   "audio_normal": "audio/bennys-big-run_normal.mp3",
+   "audio_slow": "audio/bennys-big-run_slow.mp3",
+   "group": "aba",
+   "genre": "joke",
+   "sentences": [
+    {
+     "en": "Last year, a new PE teacher named Mr. Lin *came* to our school.",
+     "zh": "去年，一位叫做林老師的新體育老師來到我們學校。"
+    },
+    {
+     "en": "He *became* famous very quickly — everyone loved his fun classes.",
+     "zh": "他非常快就出了名——每個人都喜歡他有趣的課。"
+    },
+    {
+     "en": "Every morning, he *ran* five laps around the track before the bell rang.",
+     "zh": "每天早上，在鐘響之前他都會繞著跑道跑五圈。"
+    },
+    {
+     "en": "One Monday, a lazy student named Benny *came* to school early by accident.",
+     "zh": "某個星期一，一個懶惰的學生班尼意外地提早到了學校。"
+    },
+    {
+     "en": "He saw Mr. Lin running and shouted, \"I want to become as fast as you!\"",
+     "zh": "他看見林老師在跑步，大喊：「我想要跑得和你一樣快！」"
+    },
+    {
+     "en": "Mr. Lin smiled and said, \"Then come back at seven tomorrow!\"",
+     "zh": "林老師笑著說：「那就明天七點再來！」"
+    },
+    {
+     "en": "The next morning, Benny *came* back at exactly seven o'clock.",
+     "zh": "隔天早上，班尼準時在七點回來了。"
+    },
+    {
+     "en": "He *ran* with all his strength toward the finish line.",
+     "zh": "他全力衝向終點線。"
+    },
+    {
+     "en": "But after just ten meters, he tripped over a cone and *became* a human bowling ball.",
+     "zh": "但才跑了十公尺，他就被錐形筒絆倒，變成了一顆人形保齡球。"
+    },
+    {
+     "en": "He *ran* into five cones and knocked them all down in a perfect line.",
+     "zh": "他撞上了五個錐形筒，把它們全部整整齊齊地撞倒了。"
+    },
+    {
+     "en": "Mr. Lin clapped slowly and said, \"Benny, that was the most impressive ten meters I have ever seen.\"",
+     "zh": "林老師緩緩鼓掌說：「班尼，那是我所見過最令人印象深刻的十公尺。」"
+    }
+   ],
+   "verbs": [
+    {
+     "v": "become",
+     "ved": "became",
+     "vpp": "become",
+     "zh": "變成"
+    },
+    {
+     "v": "come",
+     "ved": "came",
+     "vpp": "come",
+     "zh": "來"
+    },
+    {
+     "v": "run",
+     "ved": "ran",
+     "vpp": "run",
+     "zh": "跑；經營"
+    }
+   ],
+   "questions": [
+    {
+     "q": "Why did Mr. Lin come to school early every day?",
+     "hint": "用 came、ran 回答",
+     "a": "He *came* to school early and *ran* five laps around the track. (他早早來到學校，繞著跑道跑五圈。)"
+    },
+    {
+     "q": "What happened to Benny after he started running?",
+     "hint": "用 ran、became 回答",
+     "a": "Benny *ran* into five cones and *became* a human bowling ball. (班尼撞上五個錐形筒，變成了一顆人形保齡球。)"
+    },
+    {
+     "q": "How did Benny become famous at the end of the story?",
+     "hint": "用 became 回答",
+     "a": "Benny *became* famous for running the most impressive ten meters ever seen. (班尼因為跑出大家所見過最令人印象深刻的十公尺而出了名。)"
+    }
+   ]
+  },
+  {
+   "id": "two-gifts-one-teacher",
+   "title": "Two Gifts, One Teacher",
+   "zh_title": "兩份禮物，一位老師",
+   "audio_normal": "audio/two-gifts-one-teacher_normal.mp3",
+   "audio_slow": "audio/two-gifts-one-teacher_slow.mp3",
+   "group": "ought",
+   "genre": "dialogue",
+   "sentences": [
+    {
+     "en": "\"I *thought* we were buying Ms. Chen's birthday gift together,\" said Mia.",
+     "zh": "「我以為我們要一起買陳老師的生日禮物，」米雅說。"
+    },
+    {
+     "en": "Jay looked down and said, \"I'm sorry. I already *bought* her a book this morning.\"",
+     "zh": "傑低下頭說：「對不起，我今天早上已經替她買了一本書。」"
+    },
+    {
+     "en": "\"A book?\" said Mia. \"I *thought* you were going to wait for me!\"",
+     "zh": "「一本書？」米雅說，「我以為你會等我的！」"
+    },
+    {
+     "en": "\"I know,\" said Jay. \"I *brought* it to school in my backpack.\"",
+     "zh": "「我知道，」傑說，「我已經把書裝在背包裡帶來學校了。」"
+    },
+    {
+     "en": "\"Well, I *bought* a card,\" Mia said. \"Now she'll get two things separately.\"",
+     "zh": "「好吧，我買了一張卡，」米雅說，「這樣她會分別收到兩樣東西了。」"
+    },
+    {
+     "en": "\"Let's not fight about it,\" said Jay.",
+     "zh": "「我們別為這件事吵架嘛，」傑說。"
+    },
+    {
+     "en": "\"We *fought* about the science project last week, too!\" said Mia.",
+     "zh": "「我們上週也為了科學作業吵架了！」米雅說。"
+    },
+    {
+     "en": "\"I *thought* about that,\" Jay said quietly. \"I was wrong that time.\"",
+     "zh": "「我想過那件事，」傑輕聲說，「那次是我不對。」"
+    },
+    {
+     "en": "\"Ms. Chen *taught* us to always communicate better,\" said Mia.",
+     "zh": "「陳老師教導我們要多多溝通，」米雅說。"
+    },
+    {
+     "en": "\"She *taught* us a lot,\" Jay admitted. \"I should have told you earlier.\"",
+     "zh": "「她教了我們很多，」傑承認道，「我應該早點告訴你的。」"
+    },
+    {
+     "en": "Mia *caught* a glimpse of Jay's book sticking out of his bag.",
+     "zh": "米雅瞥見傑的書從包包裡露了出來。"
+    },
+    {
+     "en": "\"Oh no,\" she said. \"I almost *bought* the same one!\"",
+     "zh": "「哦不，」她說，「我差點買了一模一樣的！」"
+    },
+    {
+     "en": "Jay laughed. \"I *sought* the perfect gift in three different stores,\" he said.",
+     "zh": "傑笑了，「我在三家不同的店尋找完美的禮物，」他說。"
+    },
+    {
+     "en": "\"And I *caught* the last card at the bookstore just in time,\" said Mia, smiling now.",
+     "zh": "「而我剛好及時在書店搶到最後一張卡片，」米雅笑著說。"
+    },
+    {
+     "en": "\"So together,\" said Jay, \"we *brought* her the perfect combination.\"",
+     "zh": "「那麼，」傑說，「我們合起來帶給她最完美的組合。」"
+    },
+    {
+     "en": "\"I *thought* you'd find a way to make this okay,\" said Mia.",
+     "zh": "「我就知道你會想出辦法讓一切都沒問題的，」米雅說。"
+    }
+   ],
+   "verbs": [
+    {
+     "v": "bring",
+     "ved": "brought",
+     "vpp": "brought",
+     "zh": "帶來"
+    },
+    {
+     "v": "buy",
+     "ved": "bought",
+     "vpp": "bought",
+     "zh": "買"
+    },
+    {
+     "v": "catch",
+     "ved": "caught",
+     "vpp": "caught",
+     "zh": "抓"
+    },
+    {
+     "v": "fight",
+     "ved": "fought",
+     "vpp": "fought",
+     "zh": "吵架；打架"
+    },
+    {
+     "v": "seek",
+     "ved": "sought",
+     "vpp": "sought",
+     "zh": "尋找"
+    },
+    {
+     "v": "teach",
+     "ved": "taught",
+     "vpp": "taught",
+     "zh": "教導"
+    },
+    {
+     "v": "think",
+     "ved": "thought",
+     "vpp": "thought",
+     "zh": "想；認為"
+    }
+   ],
+   "questions": [
+    {
+     "q": "What did Jay bring to school for Ms. Chen?",
+     "hint": "用 brought 回答",
+     "a": "Jay *brought* a book to school in his backpack. (傑用背包把一本書帶來學校。)"
+    },
+    {
+     "q": "What did Ms. Chen teach her students?",
+     "hint": "用 taught 回答",
+     "a": "She *taught* them to always communicate better. (她教導他們要多多溝通。)"
+    },
+    {
+     "q": "How did Jay find the perfect gift for Ms. Chen?",
+     "hint": "用 sought 回答",
+     "a": "Jay *sought* the perfect gift in three different stores. (傑在三家不同的店尋找完美的禮物。)"
+    }
+   ]
+  },
+  {
+   "id": "the-night-leo-could-not-sleep",
+   "title": "The Night Leo Could Not Sleep",
+   "zh_title": "李奧睡不著的那個夜晚",
+   "audio_normal": "audio/the-night-leo-could-not-sleep_normal.mp3",
+   "audio_slow": "audio/the-night-leo-could-not-sleep_slow.mp3",
+   "group": "ept",
+   "genre": "narrative",
+   "sentences": [
+    {
+     "en": "One cold night, Grandma *swept* the floor before bed.",
+     "zh": "一個寒冷的夜晚，奶奶在睡前把地板掃乾淨。"
+    },
+    {
+     "en": "She *kept* the lights low and the house quiet.",
+     "zh": "她把燈光調暗，讓家裡保持安靜。"
+    },
+    {
+     "en": "Little Leo watched her from the doorway.",
+     "zh": "小李奧站在門口看著她。"
+    },
+    {
+     "en": "\"Why do you always sweep at night?\" he asked.",
+     "zh": "「你為什麼每晚都要掃地？」他問。"
+    },
+    {
+     "en": "\"A clean home *kept* the bad dreams away,\" Grandma said softly.",
+     "zh": "「乾淨的家能趕走噩夢，」奶奶輕聲說道。"
+    },
+    {
+     "en": "Leo nodded and went to his room.",
+     "zh": "李奧點點頭，走回自己的房間。"
+    },
+    {
+     "en": "He lay down and soon *slept* without any worries.",
+     "zh": "他躺下來，很快就安心地睡著了。"
+    },
+    {
+     "en": "But in the middle of the night, Leo heard a soft sound.",
+     "zh": "但在深夜，李奧聽到一個輕柔的聲音。"
+    },
+    {
+     "en": "He walked to the living room and found Grandma sitting alone.",
+     "zh": "他走到客廳，發現奶奶獨自坐著。"
+    },
+    {
+     "en": "Tears ran down her face — she *wept* quietly by the window.",
+     "zh": "淚水流下她的臉頰——她在窗邊輕聲哭泣。"
+    },
+    {
+     "en": "\"Grandma, what's wrong?\" Leo asked softly.",
+     "zh": "「奶奶，你怎麼了？」李奧輕聲問。"
+    },
+    {
+     "en": "She *kept* her voice steady and said, \"I miss Grandpa.\"",
+     "zh": "她努力讓聲音穩住，說：「我想念爺爺。」"
+    },
+    {
+     "en": "Leo sat beside her and held her hand tight.",
+     "zh": "李奧坐到她身邊，緊緊握住她的手。"
+    },
+    {
+     "en": "They talked until the sadness *swept* away like a soft wind.",
+     "zh": "他們聊了很久，直到悲傷像微風一樣消散。"
+    },
+    {
+     "en": "That night, Leo *slept* with a warm feeling in his heart.",
+     "zh": "那晚，李奧帶著心裡溫暖的感覺安然入睡。"
+    }
+   ],
+   "verbs": [
+    {
+     "v": "keep",
+     "ved": "kept",
+     "vpp": "kept",
+     "zh": "保持"
+    },
+    {
+     "v": "sleep",
+     "ved": "slept",
+     "vpp": "slept",
+     "zh": "睡"
+    },
+    {
+     "v": "sweep",
+     "ved": "swept",
+     "vpp": "swept",
+     "zh": "掃"
+    },
+    {
+     "v": "weep",
+     "ved": "wept",
+     "vpp": "wept",
+     "zh": "哭泣"
+    }
+   ],
+   "questions": [
+    {
+     "q": "What did Grandma do every night before bed?",
+     "hint": "用 sweep 回答",
+     "a": "She *swept* the floor before bed. （她在睡前把地板掃乾淨。）"
+    },
+    {
+     "q": "What was Grandma doing when Leo found her by the window?",
+     "hint": "用 weep 回答",
+     "a": "She *wept* quietly by the window. （她在窗邊輕聲哭泣。）"
+    },
+    {
+     "q": "How did Leo feel when he finally went back to sleep?",
+     "hint": "用 sleep 回答",
+     "a": "He *slept* with a warm feeling in his heart. （他帶著溫暖的感覺安然入睡。）"
+    }
+   ]
+  },
+  {
+   "id": "a-box-full-of-friendship",
+   "title": "A Box Full of Friendship",
+   "zh_title": "裝滿友誼的小木盒",
+   "audio_normal": "audio/a-box-full-of-friendship_normal.mp3",
+   "audio_slow": "audio/a-box-full-of-friendship_slow.mp3",
+   "group": "dt",
+   "genre": "dialogue",
+   "sentences": [
+    {
+     "en": "\"Tom *left* for Canada last week,\" Maya said to Ben.",
+     "zh": "「湯姆上週去加拿大了，」梅雅對班說。"
+    },
+    {
+     "en": "\"I know. I *felt* so sad when he went,\" Ben replied.",
+     "zh": "「我知道。他走的時候，我好難過，」班回答。"
+    },
+    {
+     "en": "\"I *spent* two whole days not knowing what to do,\" said Maya.",
+     "zh": "「我整整兩天不知道該怎麼辦，」梅雅說。"
+    },
+    {
+     "en": "\"What do you mean?\" asked Ben.",
+     "zh": "「你是什麼意思？」班問。"
+    },
+    {
+     "en": "\"I *meant* we should do something special for him,\" Maya answered.",
+     "zh": "「我的意思是，我們應該為他做些特別的事，」梅雅回答。"
+    },
+    {
+     "en": "\"You *built* that little wooden box, right? Can we use it?\" she asked.",
+     "zh": "「你做了那個小木盒，對吧？我們可以用它嗎？」她問。"
+    },
+    {
+     "en": "\"Sure! And I already *lent* you my blue paint. Remember?\" Ben said.",
+     "zh": "「當然！而且我已經把藍色顏料借給你了，還記得嗎？」班說。"
+    },
+    {
+     "en": "Maya *bent* down to pick up a pen from her bag.",
+     "zh": "梅雅彎下腰，從袋子裡撿起一支筆。"
+    },
+    {
+     "en": "\"What should I write?\" she asked.",
+     "zh": "「我應該寫什麼？」她問。"
+    },
+    {
+     "en": "\"I *dealt* with the photos. You write the letter,\" Ben said.",
+     "zh": "「照片的部分我來處理。你來寫信，」班說。"
+    },
+    {
+     "en": "Maya nodded and wrote for a long time.",
+     "zh": "梅雅點點頭，寫了很長一段時間。"
+    },
+    {
+     "en": "\"I *meant* every word,\" she said when she finished.",
+     "zh": "「每一個字我都是認真的，」她寫完後說。"
+    },
+    {
+     "en": "\"Perfect. Let's put everything in the box,\" Ben said.",
+     "zh": "「太棒了。我們把所有東西放進盒子裡吧，」班說。"
+    },
+    {
+     "en": "The next morning, they *sent* the package to Tom's new address.",
+     "zh": "隔天早上，他們把包裹寄到湯姆的新地址。"
+    },
+    {
+     "en": "\"I hope he smiles when he opens it,\" Maya said with a warm smile.",
+     "zh": "「我希望他打開時會微笑，」梅雅帶著溫暖的笑說。"
+    }
+   ],
+   "verbs": [
+    {
+     "v": "bend",
+     "ved": "bent",
+     "vpp": "bent",
+     "zh": "彎曲"
+    },
+    {
+     "v": "build",
+     "ved": "built",
+     "vpp": "built",
+     "zh": "建造"
+    },
+    {
+     "v": "deal",
+     "ved": "dealt",
+     "vpp": "dealt",
+     "zh": "處理；交易"
+    },
+    {
+     "v": "feel",
+     "ved": "felt",
+     "vpp": "felt",
+     "zh": "感覺"
+    },
+    {
+     "v": "leave",
+     "ved": "left",
+     "vpp": "left",
+     "zh": "離開"
+    },
+    {
+     "v": "lend",
+     "ved": "lent",
+     "vpp": "lent",
+     "zh": "借出"
+    },
+    {
+     "v": "mean",
+     "ved": "meant",
+     "vpp": "meant",
+     "zh": "意思是"
+    },
+    {
+     "v": "send",
+     "ved": "sent",
+     "vpp": "sent",
+     "zh": "寄；送"
+    },
+    {
+     "v": "spend",
+     "ved": "spent",
+     "vpp": "spent",
+     "zh": "花費"
+    }
+   ],
+   "questions": [
+    {
+     "q": "Why did Maya and Ben want to make a gift?",
+     "hint": "用 leave 回答",
+     "a": "Because Tom *left* for Canada last week. （因為湯姆上週去了加拿大。）"
+    },
+    {
+     "q": "What did Ben make that they could use for the gift?",
+     "hint": "用 build 回答",
+     "a": "He *built* a small wooden box. （他做了一個小木盒。）"
+    },
+    {
+     "q": "When did they send the package to Tom?",
+     "hint": "用 send 回答",
+     "a": "They *sent* it the next morning. （他們隔天早上把它寄出去了。）"
+    }
+   ]
+  },
+  {
+   "id": "the-night-of-the-big-storm",
+   "title": "The Night of the Big Storm",
+   "zh_title": "暴風雨之夜",
+   "audio_normal": "audio/the-night-of-the-big-storm_normal.mp3",
+   "audio_slow": "audio/the-night-of-the-big-storm_slow.mp3",
+   "group": "abb",
+   "genre": "narrative",
+   "sentences": [
+    {
+     "en": "Last summer, our class *met* at the foot of a big mountain for a camping trip.",
+     "zh": "去年夏天，我們全班在一座大山腳下集合，準備去露營。"
+    },
+    {
+     "en": "Our teacher, Mr. Lin, *led* us along a narrow forest trail.",
+     "zh": "我們的林老師帶著我們沿著一條狹窄的森林小徑前行。"
+    },
+    {
+     "en": "We *found* a perfect campsite near a cool stream.",
+     "zh": "我們在一條清涼的小溪旁找到了一個完美的紮營地點。"
+    },
+    {
+     "en": "Sam *dug* a small hole to build the campfire.",
+     "zh": "山姆挖了一個小坑來搭建營火。"
+    },
+    {
+     "en": "Mr. Lin *lit* the fire, and everyone cheered.",
+     "zh": "林老師點燃了營火，大家都歡呼起來。"
+    },
+    {
+     "en": "We *fed* the fire with dry wood to keep warm.",
+     "zh": "我們用乾木頭餵養營火，讓自己保持溫暖。"
+    },
+    {
+     "en": "Then a storm *struck* without warning.",
+     "zh": "接著，一場暴風雨毫無預警地來臨。"
+    },
+    {
+     "en": "A rope on a tree *swung* wildly in the strong wind.",
+     "zh": "樹上的一條繩子在強風中劇烈搖擺。"
+    },
+    {
+     "en": "We *lost* our map in the dark.",
+     "zh": "我們在黑暗中弄丟了地圖。"
+    },
+    {
+     "en": "A wet rock *slid* down the slope and knocked over our tent.",
+     "zh": "一塊溼石頭從坡上滑下來，把我們的帳篷撞倒了。"
+    },
+    {
+     "en": "Mr. Lin *held* his flashlight high and told us to stay calm.",
+     "zh": "林老師舉高手電筒，叫我們保持冷靜。"
+    },
+    {
+     "en": "He *hung* a bright orange flag from a tall branch so we could be seen.",
+     "zh": "他在高高的樹枝上掛了一面鮮橘色旗子，讓別人能看到我們。"
+    },
+    {
+     "en": "We all *sat* close together under a big rock for shelter.",
+     "zh": "我們全都緊靠在一起，躲在一塊大岩石下避風雨。"
+    },
+    {
+     "en": "Suddenly, I *heard* a helicopter in the distance.",
+     "zh": "突然，我聽到遠方有直升機的聲音。"
+    },
+    {
+     "en": "Mr. Lin *shot* a signal flare into the dark sky.",
+     "zh": "林老師向漆黑的天空發射了一枚信號彈。"
+    },
+    {
+     "en": "The rescue team *found* us and took us home safely.",
+     "zh": "救援隊找到了我們，安全地把我們帶回家。"
+    },
+    {
+     "en": "Later, our class *won* an award for staying calm in the storm.",
+     "zh": "後來，我們班因為在暴風雨中保持冷靜而獲得了一個獎項。"
+    }
+   ],
+   "verbs": [
+    {
+     "v": "dig",
+     "ved": "dug",
+     "vpp": "dug",
+     "zh": "挖"
+    },
+    {
+     "v": "feed",
+     "ved": "fed",
+     "vpp": "fed",
+     "zh": "餵"
+    },
+    {
+     "v": "find",
+     "ved": "found",
+     "vpp": "found",
+     "zh": "找到"
+    },
+    {
+     "v": "hang",
+     "ved": "hung",
+     "vpp": "hung",
+     "zh": "吊；掛"
+    },
+    {
+     "v": "hear",
+     "ved": "heard",
+     "vpp": "heard",
+     "zh": "聽"
+    },
+    {
+     "v": "hold",
+     "ved": "held",
+     "vpp": "held",
+     "zh": "握住"
+    },
+    {
+     "v": "lead",
+     "ved": "led",
+     "vpp": "led",
+     "zh": "領導"
+    },
+    {
+     "v": "light",
+     "ved": "lit",
+     "vpp": "lit",
+     "zh": "點亮"
+    },
+    {
+     "v": "lose",
+     "ved": "lost",
+     "vpp": "lost",
+     "zh": "失去"
+    },
+    {
+     "v": "meet",
+     "ved": "met",
+     "vpp": "met",
+     "zh": "見面"
+    },
+    {
+     "v": "shoot",
+     "ved": "shot",
+     "vpp": "shot",
+     "zh": "發射"
+    },
+    {
+     "v": "sit",
+     "ved": "sat",
+     "vpp": "sat",
+     "zh": "坐"
+    },
+    {
+     "v": "slide",
+     "ved": "slid",
+     "vpp": "slid",
+     "zh": "滑"
+    },
+    {
+     "v": "strike",
+     "ved": "struck",
+     "vpp": "struck",
+     "zh": "擊打"
+    },
+    {
+     "v": "swing",
+     "ved": "swung",
+     "vpp": "swung",
+     "zh": "搖擺"
+    },
+    {
+     "v": "win",
+     "ved": "won",
+     "vpp": "won",
+     "zh": "贏得"
+    }
+   ],
+   "questions": [
+    {
+     "q": "How did Mr. Lin call for help during the storm?",
+     "hint": "用 shoot 回答",
+     "a": "He *shot* a signal flare into the dark sky. （他向漆黑的天空發射了一枚信號彈。）"
+    },
+    {
+     "q": "Where did the students go to stay safe from the storm?",
+     "hint": "用 sit 回答",
+     "a": "They *sat* close together under a big rock. （他們緊靠在一起，躲在一塊大岩石下。）"
+    },
+    {
+     "q": "What did the class win after the camping trip?",
+     "hint": "用 win 回答",
+     "a": "They *won* an award for staying calm in the storm. （他們因為在暴風雨中保持冷靜而獲獎。）"
+    }
+   ]
+  },
+  {
+   "id": "the-bakery",
+   "title": "The Bakery",
+   "zh_title": "麵包店",
+   "audio_normal": "audio/the-bakery_normal.mp3",
+   "audio_slow": "audio/the-bakery_slow.mp3",
+   "group": "aid",
+   "genre": "dialogue",
+   "sentences": [
+    {
+     "en": "Lily *stood* outside a small bakery and looked inside.",
+     "zh": "莉莉站在一家小麵包店外面往裡看。"
+    },
+    {
+     "en": "\"Good morning!\" Mr. Chen *said*. \"Come in!\"",
+     "zh": "「早安！」陳先生說。「進來吧！」"
+    },
+    {
+     "en": "\"Good morning,\" Lily *said*. \"My mom *told* me about your bread.\"",
+     "zh": "「早安，」莉莉說。「我媽媽告訴過我你的麵包。」"
+    },
+    {
+     "en": "\"She *had* a slice last week and loved it,\" Lily *said*.",
+     "zh": "「她上星期吃了一片，非常喜歡，」莉莉說。"
+    },
+    {
+     "en": "Mr. Chen smiled. \"I *made* a new batch this morning,\" he *said*.",
+     "zh": "陳先生微笑著。「我今天早上做了一批新的，」他說。"
+    },
+    {
+     "en": "\"I *laid* them on the counter at six o'clock,\" he *told* her.",
+     "zh": "「我六點鐘就把它們放到了櫃台上，」他告訴她。"
+    },
+    {
+     "en": "\"I *sold* half of them before eight,\" he *said*.",
+     "zh": "「八點前我就賣掉了一半，」他說。"
+    },
+    {
+     "en": "Lily *understood* why people came here every day.",
+     "zh": "莉莉懂了為什麼大家每天都來這裡。"
+    },
+    {
+     "en": "\"How much for one?\" she asked.",
+     "zh": "「一個多少錢？」她問。"
+    },
+    {
+     "en": "\"One dollar each,\" Mr. Chen *said*.",
+     "zh": "「每個一塊錢，」陳先生說。"
+    },
+    {
+     "en": "Lily *had* only two dollars, but she smiled.",
+     "zh": "莉莉只有兩塊錢，但她笑了。"
+    },
+    {
+     "en": "She *paid* for two rolls and *said*, \"Thank you so much!\"",
+     "zh": "她付了兩個麵包捲的錢，說：「非常謝謝你！」"
+    },
+    {
+     "en": "\"Come back tomorrow!\" Mr. Chen *said* with a big smile.",
+     "zh": "「明天再來！」陳先生帶著大大的微笑說。"
+    }
+   ],
+   "verbs": [
+    {
+     "v": "have",
+     "ved": "had",
+     "vpp": "had",
+     "zh": "擁有；用餐"
+    },
+    {
+     "v": "lay",
+     "ved": "laid",
+     "vpp": "laid",
+     "zh": "放置"
+    },
+    {
+     "v": "make",
+     "ved": "made",
+     "vpp": "made",
+     "zh": "製造"
+    },
+    {
+     "v": "pay",
+     "ved": "paid",
+     "vpp": "paid",
+     "zh": "支付"
+    },
+    {
+     "v": "say",
+     "ved": "said",
+     "vpp": "said",
+     "zh": "說"
+    },
+    {
+     "v": "sell",
+     "ved": "sold",
+     "vpp": "sold",
+     "zh": "賣"
+    },
+    {
+     "v": "stand",
+     "ved": "stood",
+     "vpp": "stood",
+     "zh": "站立"
+    },
+    {
+     "v": "tell",
+     "ved": "told",
+     "vpp": "told",
+     "zh": "告訴"
+    },
+    {
+     "v": "understand",
+     "ved": "understood",
+     "vpp": "understood",
+     "zh": "懂"
+    }
+   ],
+   "questions": [
+    {
+     "q": "What did Lily's mom tell her before she went to the bakery?",
+     "hint": "用 tell 回答",
+     "a": "She told Lily about the bakery. (她告訴莉莉這家麵包店。)"
+    },
+    {
+     "q": "How much of the bread did Mr. Chen sell before eight o'clock?",
+     "hint": "用 sell 回答",
+     "a": "He sold half of the bread rolls before eight. (他八點前就賣掉了一半的麵包捲。)"
+    },
+    {
+     "q": "How much did Lily pay for the rolls?",
+     "hint": "用 pay 回答",
+     "a": "She paid two dollars for two rolls. (她付了兩塊錢買了兩個麵包捲。)"
+    }
+   ]
+  },
+  {
+   "id": "the-summer-swim-camp",
+   "title": "The Summer Swim Camp",
+   "zh_title": "夏日游泳夏令營",
+   "audio_normal": "audio/the-summer-swim-camp_normal.mp3",
+   "audio_slow": "audio/the-summer-swim-camp_slow.mp3",
+   "group": "iau",
+   "genre": "narrative",
+   "sentences": [
+    {
+     "en": "Last summer, my class went to a swim camp for a week.",
+     "zh": "去年夏天，我們班去了一個游泳夏令營，待了一個星期。"
+    },
+    {
+     "en": "Every day *began* with an early swim in the pool.",
+     "zh": "每天都從一大早在泳池裡游泳開始。"
+    },
+    {
+     "en": "The coach *rang* the bell at seven sharp.",
+     "zh": "教練在七點整打響了鈴聲。"
+    },
+    {
+     "en": "We jumped in and *swam* three laps together.",
+     "zh": "我們跳進去，一起游了三趟。"
+    },
+    {
+     "en": "My friend Leo *drank* some pool water by mistake.",
+     "zh": "我的朋友里歐不小心喝了一些泳池的水。"
+    },
+    {
+     "en": "He laughed, and his goggles *sank* to the bottom.",
+     "zh": "他笑了，他的護目鏡沉到了底部。"
+    },
+    {
+     "en": "That evening, we had a talent show.",
+     "zh": "那天傍晚，我們舉辦了才藝表演。"
+    },
+    {
+     "en": "The show had already *begun* when I found my seat.",
+     "zh": "當我找到座位的時候，表演已經開始了。"
+    },
+    {
+     "en": "My classmate Mia *sang* two beautiful songs on stage.",
+     "zh": "我的同學米雅在台上唱了兩首美麗的歌。"
+    },
+    {
+     "en": "When she had *sung* the last note, everyone cheered.",
+     "zh": "當她唱完最後一個音符，大家都歡呼了。"
+    },
+    {
+     "en": "After the show, we sat outside and *drank* hot chocolate.",
+     "zh": "演出結束後，我們坐在外面喝了熱巧克力。"
+    },
+    {
+     "en": "Someone *began* to sing a camp song around the fire.",
+     "zh": "有人開始在營火旁唱起了一首營地歌曲。"
+    },
+    {
+     "en": "Soon, we all *sang* along and laughed under the stars.",
+     "zh": "很快地，我們全都一起跟著唱，在星空下歡笑。"
+    },
+    {
+     "en": "I had never *swum* so much before, but I loved every moment.",
+     "zh": "我以前從來沒有游過那麼多，但我愛每一刻。"
+    }
+   ],
+   "verbs": [
+    {
+     "v": "begin",
+     "ved": "began",
+     "vpp": "begun",
+     "zh": "開始"
+    },
+    {
+     "v": "drink",
+     "ved": "drank",
+     "vpp": "drunk",
+     "zh": "喝"
+    },
+    {
+     "v": "ring",
+     "ved": "rang",
+     "vpp": "rung",
+     "zh": "鳴響"
+    },
+    {
+     "v": "sing",
+     "ved": "sang",
+     "vpp": "sung",
+     "zh": "唱歌"
+    },
+    {
+     "v": "sink",
+     "ved": "sank",
+     "vpp": "sunk",
+     "zh": "下沉"
+    },
+    {
+     "v": "swim",
+     "ved": "swam",
+     "vpp": "swum",
+     "zh": "游泳"
+    }
+   ],
+   "questions": [
+    {
+     "q": "How did every day start at the swim camp?",
+     "hint": "用 begin 回答",
+     "a": "Every day began with an early swim in the pool. (每天都從一大早在泳池裡游泳開始。)"
+    },
+    {
+     "q": "What happened to Leo's goggles in the pool?",
+     "hint": "用 sink 回答",
+     "a": "His goggles sank to the bottom. (他的護目鏡沉到了底部。)"
+    },
+    {
+     "q": "What did Mia do at the talent show?",
+     "hint": "用 sing 回答",
+     "a": "She sang two beautiful songs on stage. (她在台上唱了兩首美麗的歌。)"
+    }
+   ]
+  },
+  {
+   "id": "a-perfect-day-for-kites",
+   "title": "A Perfect Day for Kites",
+   "zh_title": "放風箏的完美一天",
+   "audio_normal": "audio/a-perfect-day-for-kites_normal.mp3",
+   "audio_slow": "audio/a-perfect-day-for-kites_slow.mp3",
+   "group": "ew",
+   "genre": "narrative",
+   "sentences": [
+    {
+     "en": "Last spring, my family went to a big park on a windy day.",
+     "zh": "去年春天，我的家人在一個有風的日子去了一座大公園。"
+    },
+    {
+     "en": "My dad *knew* the perfect spot to fly kites there.",
+     "zh": "我爸爸知道那裡放風箏的完美地點。"
+    },
+    {
+     "en": "He *grew* up flying kites in that very park.",
+     "zh": "他就是在那座公園裡長大放風箏的。"
+    },
+    {
+     "en": "The wind *blew* hard and the sky was bright blue.",
+     "zh": "風吹得很大，天空是亮藍色的。"
+    },
+    {
+     "en": "My sister *drew* the kite design herself — a red dragon.",
+     "zh": "我姊姊自己設計了風箏的圖案——一條紅龍。"
+    },
+    {
+     "en": "Dad *threw* the kite into the air and let go of the string.",
+     "zh": "爸爸把風箏拋向空中，然後放開了線。"
+    },
+    {
+     "en": "The kite *flew* up, up, and up into the blue sky.",
+     "zh": "風箏越飛越高，飛進了蔚藍的天空。"
+    },
+    {
+     "en": "Birds *flew* past the kite and seemed surprised.",
+     "zh": "鳥兒飛過風箏旁邊，好像感到很驚訝。"
+    },
+    {
+     "en": "I *knew* it would be a great day.",
+     "zh": "我就知道這會是很棒的一天。"
+    },
+    {
+     "en": "Mom *drew* a picture of us holding the kite string.",
+     "zh": "媽媽畫了一幅我們拿著風箏線的畫。"
+    },
+    {
+     "en": "Then a strong gust *blew* the kite even higher.",
+     "zh": "接著一陣強風把風箏吹得更高了。"
+    },
+    {
+     "en": "The kite had *flown* farther than we expected.",
+     "zh": "風箏飛得比我們預期的還要遠。"
+    },
+    {
+     "en": "My little brother *threw* a paper airplane into the wind too.",
+     "zh": "我弟弟也把一架紙飛機丟進了風裡。"
+    },
+    {
+     "en": "The trees had *grown* tall around us, and the park looked beautiful.",
+     "zh": "周圍的樹木長得很高大，公園看起來很美麗。"
+    },
+    {
+     "en": "The wind *blew* softly at last, and we sat down to rest.",
+     "zh": "風終於輕輕地吹著，我們坐下來休息。"
+    }
+   ],
+   "verbs": [
+    {
+     "v": "blow",
+     "ved": "blew",
+     "vpp": "blown",
+     "zh": "吹"
+    },
+    {
+     "v": "draw",
+     "ved": "drew",
+     "vpp": "drawn",
+     "zh": "畫；拉"
+    },
+    {
+     "v": "fly",
+     "ved": "flew",
+     "vpp": "flown",
+     "zh": "飛"
+    },
+    {
+     "v": "grow",
+     "ved": "grew",
+     "vpp": "grown",
+     "zh": "成長"
+    },
+    {
+     "v": "know",
+     "ved": "knew",
+     "vpp": "known",
+     "zh": "知道"
+    },
+    {
+     "v": "throw",
+     "ved": "threw",
+     "vpp": "thrown",
+     "zh": "丟"
+    }
+   ],
+   "questions": [
+    {
+     "q": "What did Dad do with the kite at the park?",
+     "hint": "用 throw 回答",
+     "a": "He threw the kite into the air. (他把風箏拋向空中。)"
+    },
+    {
+     "q": "Who drew the kite design?",
+     "hint": "用 draw 回答",
+     "a": "My sister drew the kite design — a red dragon. (我姊姊設計了風箏的圖案——一條紅龍。)"
+    },
+    {
+     "q": "How was the weather when they arrived at the park?",
+     "hint": "用 blow 回答",
+     "a": "The wind blew hard and the sky was bright blue. (風吹得很大，天空是亮藍色的。)"
+    }
+   ]
+  },
+  {
+   "id": "the-missing-scarf",
+   "title": "The Missing Scarf",
+   "zh_title": "失蹤的圍巾",
+   "audio_normal": "audio/the-missing-scarf_normal.mp3",
+   "audio_slow": "audio/the-missing-scarf_slow.mp3",
+   "group": "oen",
+   "genre": "narrative",
+   "sentences": [
+    {
+     "en": "Last winter, Mia *woke* up with a great idea.",
+     "zh": "去年冬天，米亞醒來有了一個好主意。"
+    },
+    {
+     "en": "She *chose* the softest blue wool at the market.",
+     "zh": "她在市場選了最柔軟的藍色羊毛。"
+    },
+    {
+     "en": "She *wove* it carefully into a warm scarf.",
+     "zh": "她小心翼翼地把它編成一條溫暖的圍巾。"
+    },
+    {
+     "en": "She *spoke* to her friend Leo about it.",
+     "zh": "她把這件事跟朋友里奧說了。"
+    },
+    {
+     "en": "She wanted to give the scarf to her grandmother as a gift.",
+     "zh": "她想把圍巾當禮物送給奶奶。"
+    },
+    {
+     "en": "But when she *got* home, she found her bag on the floor.",
+     "zh": "但當她到家時，她發現她的袋子在地板上。"
+    },
+    {
+     "en": "Someone had *stolen* the scarf!",
+     "zh": "有人偷走了圍巾！"
+    },
+    {
+     "en": "Mia *got* very upset.",
+     "zh": "米亞非常難過。"
+    },
+    {
+     "en": "She *froze* at the door, unable to move.",
+     "zh": "她在門口愣住了，動彈不得。"
+    },
+    {
+     "en": "She had *forgotten* to zip her bag that morning.",
+     "zh": "那天早上她忘記拉上袋子的拉鍊。"
+    },
+    {
+     "en": "Her heart *broke* when she thought about Grandma.",
+     "zh": "想到奶奶時，她的心碎了。"
+    },
+    {
+     "en": "She ran to tell her teacher.",
+     "zh": "她跑去告訴她的老師。"
+    },
+    {
+     "en": "The teacher helped find the scarf.",
+     "zh": "老師幫忙找到了圍巾。"
+    },
+    {
+     "en": "It was not *broken* — just a little dirty.",
+     "zh": "它沒有損壞，只是有點髒。"
+    }
+   ],
+   "verbs": [
+    {
+     "v": "break",
+     "ved": "broke",
+     "vpp": "broken",
+     "zh": "打破"
+    },
+    {
+     "v": "choose",
+     "ved": "chose",
+     "vpp": "chosen",
+     "zh": "選擇"
+    },
+    {
+     "v": "forget",
+     "ved": "forgot",
+     "vpp": "forgotten",
+     "zh": "忘記"
+    },
+    {
+     "v": "freeze",
+     "ved": "froze",
+     "vpp": "frozen",
+     "zh": "凍結"
+    },
+    {
+     "v": "get",
+     "ved": "got",
+     "vpp": "gotten",
+     "zh": "得到"
+    },
+    {
+     "v": "speak",
+     "ved": "spoke",
+     "vpp": "spoken",
+     "zh": "說；演講"
+    },
+    {
+     "v": "steal",
+     "ved": "stole",
+     "vpp": "stolen",
+     "zh": "偷竊"
+    },
+    {
+     "v": "wake",
+     "ved": "woke",
+     "vpp": "woken",
+     "zh": "醒來"
+    },
+    {
+     "v": "weave",
+     "ved": "wove",
+     "vpp": "woven",
+     "zh": "編織"
+    }
+   ],
+   "questions": [
+    {
+     "q": "What did Mia choose at the market?",
+     "hint": "用 choose 回答",
+     "a": "She *chose* the softest blue wool. 她選了最柔軟的藍色羊毛。"
+    },
+    {
+     "q": "What happened to the scarf?",
+     "hint": "用 steal 回答",
+     "a": "Someone had *stolen* it. 有人偷走了它。"
+    },
+    {
+     "q": "What did Mia forget to do that morning?",
+     "hint": "用 forget 回答",
+     "a": "She had *forgotten* to zip her bag. 她忘記拉上袋子的拉鍊。"
+    }
+   ]
+  },
+  {
+   "id": "the-worst-excuse",
+   "title": "The Worst Excuse",
+   "zh_title": "最糟糕的藉口",
+   "audio_normal": "audio/the-worst-excuse_normal.mp3",
+   "audio_slow": "audio/the-worst-excuse_slow.mp3",
+   "group": "itten",
+   "genre": "joke",
+   "sentences": [
+    {
+     "en": "Max *wrote* a note to get out of gym class.",
+     "zh": "馬克斯寫了一張便條，想逃掉體育課。"
+    },
+    {
+     "en": "He *hid* it inside his book.",
+     "zh": "他把它藏在書裡。"
+    },
+    {
+     "en": "But his dog had *hidden* it somewhere else!",
+     "zh": "但他的狗把它藏到別的地方了！"
+    },
+    {
+     "en": "Max *rode* his bike to school with no excuse note.",
+     "zh": "馬克斯騎自行車上學，手上沒有便條。"
+    },
+    {
+     "en": "He had *written* three drafts but lost them all.",
+     "zh": "他已經寫了三份草稿，但全都弄丟了。"
+    },
+    {
+     "en": "In gym class, a bee *bit* him on the nose.",
+     "zh": "在體育課上，一隻蜜蜂咬了他的鼻子。"
+    },
+    {
+     "en": "Now he had a real excuse — a bee had *bitten* him!",
+     "zh": "現在他有了真正的藉口——一隻蜜蜂咬了他！"
+    },
+    {
+     "en": "But the teacher laughed.",
+     "zh": "但老師笑了。"
+    },
+    {
+     "en": "She had *ridden* a horse that morning and was in a great mood.",
+     "zh": "她那天早上騎了馬，心情非常好。"
+    },
+    {
+     "en": "\"You should have *written* about your dog,\" she said with a smile.",
+     "zh": "「你應該寫關於你的狗的事，」她微笑著說。"
+    }
+   ],
+   "verbs": [
+    {
+     "v": "bite",
+     "ved": "bit",
+     "vpp": "bitten",
+     "zh": "咬"
+    },
+    {
+     "v": "hide",
+     "ved": "hid",
+     "vpp": "hidden",
+     "zh": "躲藏"
+    },
+    {
+     "v": "ride",
+     "ved": "rode",
+     "vpp": "ridden",
+     "zh": "騎乘"
+    },
+    {
+     "v": "write",
+     "ved": "wrote",
+     "vpp": "written",
+     "zh": "寫"
+    }
+   ],
+   "questions": [
+    {
+     "q": "What did Max write at the beginning of the story?",
+     "hint": "用 write 回答",
+     "a": "He *wrote* a note to get out of gym class. 他寫了一張便條，想逃掉體育課。"
+    },
+    {
+     "q": "What happened to Max during gym class?",
+     "hint": "用 bite 回答",
+     "a": "A bee *bit* him on the nose. 一隻蜜蜂咬了他的鼻子。"
+    },
+    {
+     "q": "Why was the teacher in such a great mood?",
+     "hint": "用 ride 回答",
+     "a": "She had *ridden* a horse that morning. 她那天早上騎了馬。"
+    }
+   ]
+  },
+  {
+   "id": "the-ugly-shirt",
+   "title": "The Ugly Shirt",
+   "zh_title": "那件醜衣服",
+   "audio_normal": "audio/the-ugly-shirt_normal.mp3",
+   "audio_slow": "audio/the-ugly-shirt_slow.mp3",
+   "group": "orn",
+   "genre": "narrative",
+   "sentences": [
+    {
+     "en": "Amy *wore* the same ugly school shirt every day.",
+     "zh": "艾咪每天都穿著同一件醜陋的校服。"
+    },
+    {
+     "en": "She had *worn* it for three years.",
+     "zh": "她已經穿了三年了。"
+    },
+    {
+     "en": "One day, she *tore* it on a nail by the door.",
+     "zh": "有一天，她把它勾在門邊的釘子上，撕破了。"
+    },
+    {
+     "en": "The shirt was badly *torn* down the side.",
+     "zh": "那件衣服的側面被撕得很破。"
+    },
+    {
+     "en": "She *bore* the embarrassment all morning.",
+     "zh": "她整個早上都忍受著那份尷尬。"
+    },
+    {
+     "en": "At lunch, she *swore* she would change the school uniform rules.",
+     "zh": "午餐時，她發誓要改變校服規定。"
+    },
+    {
+     "en": "She had *sworn* this before, but never did anything.",
+     "zh": "她以前也發誓過，但從沒真正行動。"
+    },
+    {
+     "en": "She *bore* the heavy feeling in her chest all afternoon.",
+     "zh": "她整個下午都忍受著胸口那股沉重的感覺。"
+    },
+    {
+     "en": "She *wore* her jacket to cover the tear.",
+     "zh": "她穿上外套來遮住破洞。"
+    },
+    {
+     "en": "After school, she wrote a letter to the principal.",
+     "zh": "放學後，她寫了一封信給校長。"
+    },
+    {
+     "en": "She listed all the problems she had *borne* for years.",
+     "zh": "她列出了多年來忍受的所有問題。"
+    },
+    {
+     "en": "The principal read the letter carefully.",
+     "zh": "校長仔細地讀了那封信。"
+    },
+    {
+     "en": "A week later, the school got new uniforms.",
+     "zh": "一週後，學校換了新制服。"
+    },
+    {
+     "en": "Amy smiled when she *tore* up her old shirt.",
+     "zh": "當艾咪撕碎她的舊衣服時，她笑了。"
+    }
+   ],
+   "verbs": [
+    {
+     "v": "swear",
+     "ved": "swore",
+     "vpp": "sworn",
+     "zh": "發誓"
+    },
+    {
+     "v": "tear",
+     "ved": "tore",
+     "vpp": "torn",
+     "zh": "撕"
+    },
+    {
+     "v": "wear",
+     "ved": "wore",
+     "vpp": "worn",
+     "zh": "穿著"
+    },
+    {
+     "v": "bear",
+     "ved": "bore",
+     "vpp": "borne",
+     "zh": "忍受"
+    }
+   ],
+   "questions": [
+    {
+     "q": "What happened to Amy's shirt one day?",
+     "hint": "用 tear 回答",
+     "a": "She *tore* it on a nail, and it was badly *torn*. 她把它勾在釘子上撕破了，撕得很嚴重。"
+    },
+    {
+     "q": "What did Amy swear to do at lunch?",
+     "hint": "用 swear 回答",
+     "a": "She *swore* she would change the school uniform rules. 她發誓要改變校服規定。"
+    },
+    {
+     "q": "What did Amy list in her letter to the principal?",
+     "hint": "用 bear 回答",
+     "a": "She listed all the problems she had *borne* for years. 她列出了多年來忍受的所有問題。"
+    }
+   ]
+  },
+  {
+   "id": "after-the-big-game",
+   "title": "After the Big Game",
+   "zh_title": "大賽之後",
+   "audio_normal": "audio/after-the-big-game_normal.mp3",
+   "audio_slow": "audio/after-the-big-game_slow.mp3",
+   "group": "solo",
+   "genre": "dialogue",
+   "sentences": [
+    {
+     "en": "Sara *saw* Ben sitting alone after the big game.",
+     "zh": "大賽後，沙拉看到班獨自坐在那裡。"
+    },
+    {
+     "en": "\"I *was* so nervous during the last minute,\" Ben said.",
+     "zh": "「最後一分鐘我非常緊張，」班說。"
+    },
+    {
+     "en": "\"You *did* great out there,\" Sara told him.",
+     "zh": "「你在場上表現很好，」沙拉告訴他。"
+    },
+    {
+     "en": "\"But their team *beat* us by five points,\" Ben said sadly.",
+     "zh": "「但對方以五分之差打敗我們，」班難過地說。"
+    },
+    {
+     "en": "\"We have never *been* this unlucky before,\" Sara agreed.",
+     "zh": "「我們以前從來沒這麼不走運過，」沙拉附和道。"
+    },
+    {
+     "en": "\"Our coach *gave* us a long talk after,\" Ben said.",
+     "zh": "「我們的教練賽後給了我們一頓長篇大論，」班說。"
+    },
+    {
+     "en": "\"He *showed* us our mistakes on video,\" Ben continued.",
+     "zh": "「他在影片裡給我們看了我們的錯誤，」班繼續說。"
+    },
+    {
+     "en": "\"He also *took* away our phones during the meeting,\" Ben added.",
+     "zh": "「他還在訓話期間把我們的手機沒收了，」班補充道。"
+    },
+    {
+     "en": "\"I *ate* nothing after the game,\" Ben said quietly.",
+     "zh": "「我賽後什麼都沒吃，」班輕聲說。"
+    },
+    {
+     "en": "\"I *went* straight home and felt terrible,\" he added.",
+     "zh": "「我直接回家，感覺很糟，」他補充說。"
+    },
+    {
+     "en": "\"My mom *drove* me home in silence,\" Ben said.",
+     "zh": "「我媽默默地開車送我回家，」班說。"
+    },
+    {
+     "en": "\"The sun *rose* before I could fall asleep,\" he continued.",
+     "zh": "「太陽升起來了，我還是睡不著，」他繼續說。"
+    },
+    {
+     "en": "Sara *shook* her head. \"That's really tough.\"",
+     "zh": "沙拉搖搖頭。「真的很難熬。」"
+    },
+    {
+     "en": "\"I even *fell* asleep in class today,\" Ben admitted with a weak smile.",
+     "zh": "「我今天甚至在課堂上睡著了，」班帶著苦笑承認。"
+    },
+    {
+     "en": "\"Have you *forgiven* yourself?\" Sara asked gently.",
+     "zh": "「你原諒自己了嗎？」沙拉輕聲問。"
+    },
+    {
+     "en": "\"Not yet, but this loss has *driven* me to practice harder,\" Ben said with a smile.",
+     "zh": "「還沒，但這次的失敗已經激勵我更努力練習了，」班微笑著說。"
+    }
+   ],
+   "verbs": [
+    {
+     "v": "be",
+     "ved": "was",
+     "vpp": "been",
+     "zh": "是"
+    },
+    {
+     "v": "beat",
+     "ved": "beat",
+     "vpp": "beaten",
+     "zh": "打；打敗"
+    },
+    {
+     "v": "do",
+     "ved": "did",
+     "vpp": "done",
+     "zh": "做"
+    },
+    {
+     "v": "drive",
+     "ved": "drove",
+     "vpp": "driven",
+     "zh": "開車"
+    },
+    {
+     "v": "eat",
+     "ved": "ate",
+     "vpp": "eaten",
+     "zh": "吃"
+    },
+    {
+     "v": "fall",
+     "ved": "fell",
+     "vpp": "fallen",
+     "zh": "跌倒"
+    },
+    {
+     "v": "forgive",
+     "ved": "forgave",
+     "vpp": "forgiven",
+     "zh": "原諒"
+    },
+    {
+     "v": "give",
+     "ved": "gave",
+     "vpp": "given",
+     "zh": "給"
+    },
+    {
+     "v": "go",
+     "ved": "went",
+     "vpp": "gone",
+     "zh": "去"
+    },
+    {
+     "v": "rise",
+     "ved": "rose",
+     "vpp": "risen",
+     "zh": "上升"
+    },
+    {
+     "v": "see",
+     "ved": "saw",
+     "vpp": "seen",
+     "zh": "看"
+    },
+    {
+     "v": "shake",
+     "ved": "shook",
+     "vpp": "shaken",
+     "zh": "搖"
+    },
+    {
+     "v": "show",
+     "ved": "showed",
+     "vpp": "shown",
+     "zh": "展現"
+    },
+    {
+     "v": "take",
+     "ved": "took",
+     "vpp": "taken",
+     "zh": "拿"
+    }
+   ],
+   "questions": [
+    {
+     "q": "How did Sara find Ben after the game?",
+     "hint": "用 see 回答",
+     "a": "She *saw* him sitting alone. 她看到他獨自坐著。"
+    },
+    {
+     "q": "What did the coach do during the team meeting?",
+     "hint": "用 show 或 take 回答",
+     "a": "He *showed* them their mistakes on video and *took* away their phones. 他給他們看了影片中的錯誤，並沒收了他們的手機。"
+    },
+    {
+     "q": "What did the loss do for Ben in the end?",
+     "hint": "用 drive 回答",
+     "a": "It had *driven* him to practice harder. 它激勵他更努力練習了。"
+    }
+   ]
+  }
+ ]
 }
