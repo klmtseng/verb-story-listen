@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4f8cff">
+<title>動詞故事聽讀</title>
+<style>
+  :root{
+    --bg:#f6f8fc; --card:#fff; --ink:#1f2733; --sub:#6b7686;
+    --accent:#4f8cff; --verb:#e0533d; --verbbg:#fff0ed; --ok:#28c76f;
+    --line:#e7ecf3; --shadow:0 2px 12px rgba(20,40,80,.07);
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font-family:-apple-system,"PingFang TC","Noto Sans TC","Segoe UI",system-ui,sans-serif;
+    line-height:1.7;padding:0 0 60px}
+  header{background:linear-gradient(135deg,#4f8cff,#6ac1ff);color:#fff;
+    padding:26px 20px 22px;border-radius:0 0 22px 22px;box-shadow:var(--shadow)}
+  header h1{margin:0;font-size:22px;font-weight:800;letter-spacing:.5px}
+  header p{margin:6px 0 0;opacity:.92;font-size:14px}
+  .wrap{max-width:640px;margin:0 auto;padding:0 16px}
+  .card{background:var(--card);border-radius:16px;box-shadow:var(--shadow);
+    padding:18px;margin-top:16px}
+  .story-title{font-size:20px;font-weight:800;margin:0 0 2px}
+  .story-zh{color:var(--sub);font-size:14px;margin:0 0 14px}
+
+  /* audio */
+  .audio-row{display:flex;gap:10px;margin:4px 0 6px}
+  .abtn{flex:1;border:none;border-radius:12px;padding:13px 8px;font-size:15px;
+    font-weight:700;color:#fff;background:var(--accent);cursor:pointer;
+    display:flex;align-items:center;justify-content:center;gap:7px}
+  .abtn.slow{background:#7367f0}
+  .abtn.playing{background:var(--ok)}
+  .abtn small{font-weight:600;opacity:.85;font-size:12px}
+  .hint-audio{font-size:12.5px;color:var(--sub);margin:2px 2px 0}
+
+  /* sentences */
+  .s{padding:11px 12px;border-radius:12px;margin:8px 0;background:#fafcff;
+    border:1px solid var(--line);cursor:pointer;transition:background .15s}
+  .s:active{background:#eef4ff}
+  .s .en{font-size:17px}
+  .s .zh{color:var(--sub);font-size:15px;margin-top:7px;padding-top:7px;
+    border-top:1px dashed var(--line);display:none}
+  .s.open .zh{display:block}
+  .v{color:var(--verb);font-weight:800;background:var(--verbbg);
+    border-radius:5px;padding:0 3px}
+
+  .toolbar{display:flex;gap:10px;margin:6px 0 2px;flex-wrap:wrap}
+  .tbtn{border:1px solid var(--line);background:#fff;border-radius:20px;
+    padding:8px 15px;font-size:13.5px;color:var(--ink);cursor:pointer;font-weight:600}
+  .tbtn:active{background:#eef4ff}
+
+  /* collapsible section */
+  .sec-h{display:flex;align-items:center;justify-content:space-between;
+    cursor:pointer;font-weight:800;font-size:17px}
+  .sec-h .chev{transition:transform .2s;color:var(--sub)}
+  .sec.closed .chev{transform:rotate(-90deg)}
+  .sec.closed .sec-body{display:none}
+  .sec-body{margin-top:12px}
+
+  /* verb table */
+  table{width:100%;border-collapse:collapse;font-size:14.5px}
+  th,td{text-align:left;padding:7px 6px;border-bottom:1px solid var(--line)}
+  th{color:var(--sub);font-size:12.5px;font-weight:700}
+  td.base{font-weight:800;color:var(--accent)}
+  td .zh{color:var(--sub);font-size:12px;display:block}
+
+  /* quiz */
+  .q{margin:12px 0;padding:13px;border-radius:12px;background:#fafcff;border:1px solid var(--line)}
+  .q .qt{font-weight:700;font-size:15.5px}
+  .q .qh{color:var(--accent);font-size:12.5px;margin-top:4px}
+  .q .qa{margin-top:10px;padding:10px;border-radius:9px;background:#eafaf0;
+    color:#166a3e;font-size:14.5px;display:none}
+  .q.open .qa{display:block}
+  .q .reveal{margin-top:9px;font-size:13px;color:var(--accent);font-weight:700;cursor:pointer}
+
+  footer{text-align:center;color:var(--sub);font-size:12px;margin-top:22px;padding:0 20px;line-height:1.6}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1 id="hTitle">動詞故事聽讀 🎧</h1>
+    <p id="hSub">邊聽、邊讀、邊記動詞三態</p>
+  </div>
+</header>
+
+<div class="wrap" id="app"></div>
+
+<footer>
+  本頁只用來練習動詞，故事為原創內容。<br>用手機瀏覽器開啟；可「加入主畫面」當 App 用。
+</footer>
+
+<script>
+const app = document.getElementById('app');
+
+function renderSentence(s){
+  const en = s.en.replace(/\*(.+?)\*/g, '<span class="v">$1</span>');
+  const div = document.createElement('div');
+  div.className = 's';
+  div.innerHTML = `<div class="en">${en}</div><div class="zh">${s.zh}</div>`;
+  div.addEventListener('click', ()=> div.classList.toggle('open'));
+  return div;
+}
+
+function audioButton(label, sub, src, cls){
+  const wrap = document.createElement('button');
+  wrap.className = 'abtn ' + cls;
+  wrap.innerHTML = `▶︎ ${label} <small>${sub}</small>`;
+  const audio = new Audio(src);
+  wrap.addEventListener('click', ()=>{
+    // stop other audios
+    document.querySelectorAll('audio').forEach(a=>{ if(a!==audio){a.pause();} });
+    document.querySelectorAll('.abtn').forEach(b=>{ if(b!==wrap){b.classList.remove('playing'); b.innerHTML=b.dataset.idle;} });
+    if(audio.paused){ audio.play(); wrap.classList.add('playing'); wrap.innerHTML=`⏸ 播放中… <small>${sub}</small>`; }
+    else{ audio.pause(); wrap.classList.remove('playing'); wrap.innerHTML=wrap.dataset.idle; }
+  });
+  wrap.dataset.idle = `▶︎ ${label} <small>${sub}</small>`;
+  audio.addEventListener('ended', ()=>{ wrap.classList.remove('playing'); wrap.innerHTML=wrap.dataset.idle; });
+  document.body.appendChild(audio);
+  return wrap;
+}
+
+function section(title, closedByDefault){
+  const sec = document.createElement('div');
+  sec.className = 'sec' + (closedByDefault ? ' closed':'');
+  const h = document.createElement('div');
+  h.className = 'sec-h';
+  h.innerHTML = `<span>${title}</span><span class="chev">▼</span>`;
+  const body = document.createElement('div');
+  body.className = 'sec-body';
+  h.addEventListener('click', ()=> sec.classList.toggle('closed'));
+  sec.appendChild(h); sec.appendChild(body);
+  return {sec, body};
+}
+
+function renderStory(st){
+  document.getElementById('hTitle').textContent = DATA.meta.title + ' 🎧';
+  document.getElementById('hSub').textContent = DATA.meta.subtitle;
+
+  // story card
+  const card = document.createElement('div'); card.className='card';
+  card.innerHTML = `<div class="story-title">${st.title}</div><div class="story-zh">${st.zh_title}</div>`;
+
+  // audio
+  const arow = document.createElement('div'); arow.className='audio-row';
+  arow.appendChild(audioButton('正常速','約 47 秒', st.audio_normal, 'normal'));
+  arow.appendChild(audioButton('慢速','適合聽寫', st.audio_slow, 'slow'));
+  card.appendChild(arow);
+  const ah = document.createElement('div'); ah.className='hint-audio';
+  ah.textContent = '💡 先只聽、不看字，再邊聽邊讀。慢速版可以用來一句一句寫下來（聽寫）。';
+  card.appendChild(ah);
+
+  // toolbar
+  const tb = document.createElement('div'); tb.className='toolbar';
+  const bAll = document.createElement('button'); bAll.className='tbtn'; bAll.textContent='顯示全部中文';
+  const bNone= document.createElement('button'); bNone.className='tbtn'; bNone.textContent='隱藏全部中文';
+  tb.appendChild(bAll); tb.appendChild(bNone);
+  card.appendChild(tb);
+
+  // sentences
+  const box = document.createElement('div');
+  st.sentences.forEach(s=> box.appendChild(renderSentence(s)));
+  card.appendChild(box);
+  bAll.onclick =()=> box.querySelectorAll('.s').forEach(e=>e.classList.add('open'));
+  bNone.onclick=()=> box.querySelectorAll('.s').forEach(e=>e.classList.remove('open'));
+  const tip = document.createElement('div'); tip.className='hint-audio';
+  tip.style.marginTop='8px'; tip.textContent='👆 點任一句可以看／收中文翻譯。紅字就是這篇的重點動詞。';
+  card.appendChild(tip);
+  app.appendChild(card);
+
+  // verbs section
+  const vcard = document.createElement('div'); vcard.className='card';
+  const {sec:vsec, body:vbody} = section('📋 本篇動詞三態（'+st.verbs.length+' 個）', true);
+  let rows = '<table><tr><th>原形</th><th>過去式</th><th>過去分詞</th></tr>';
+  st.verbs.forEach(v=>{
+    rows += `<tr><td class="base">${v.v}<span class="zh">${v.zh}</span></td><td>${v.ved}</td><td>${v.vpp}</td></tr>`;
+  });
+  rows += '</table>';
+  vbody.innerHTML = rows;
+  vcard.appendChild(vsec); app.appendChild(vcard);
+
+  // quiz
+  const qcard = document.createElement('div'); qcard.className='card';
+  const {sec:qsec, body:qbody} = section('🧠 動動腦（用動詞回答看看）', false);
+  st.questions.forEach(q=>{
+    const qd = document.createElement('div'); qd.className='q';
+    qd.innerHTML = `<div class="qt">${q.q}</div><div class="qh">提示：${q.hint}</div>
+      <div class="reveal">看答案 ▾</div><div class="qa">${q.a}</div>`;
+    qd.querySelector('.reveal').addEventListener('click', ()=>{
+      qd.classList.toggle('open');
+      qd.querySelector('.reveal').textContent = qd.classList.contains('open') ? '收起 ▴' : '看答案 ▾';
+    });
+    qbody.appendChild(qd);
+  });
+  qcard.appendChild(qsec); app.appendChild(qcard);
+}
+
+let DATA = null;
+fetch('stories.json').then(r=>r.json()).then(d=>{ DATA=d; renderStory(d.stories[0]); })
+.catch(e=>{ app.innerHTML='<div class="card">載入失敗：'+e+'</div>'; });
+</script>
+</body>
+</html>

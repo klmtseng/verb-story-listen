@@ -1,0 +1,68 @@
+{
+  "meta": {
+    "title": "動詞故事聽讀",
+    "subtitle": "邊聽、邊讀、邊記動詞三態",
+    "grade": "七年級",
+    "verbs_ref": "verbs_grade7_v1.json",
+    "human_verified": true,
+    "verified_by": "Fable 5 自撰故事 + 動詞形態對照 verbs_grade7_v1.json 2026-07-06",
+    "schema_version": 1
+  },
+  "stories": [
+    {
+      "id": "the-big-race",
+      "title": "The Big Race",
+      "zh_title": "那場大賽跑",
+      "audio_normal": "audio/story1_normal.mp3",
+      "audio_slow": "audio/story1_slow.mp3",
+      "sentences": [
+        {"en": "Last Saturday *was* our school's sports day.", "zh": "上週六是我們學校的運動會。"},
+        {"en": "I *woke* up early because I *felt* nervous.", "zh": "我很早就醒來，因為我覺得很緊張。"},
+        {"en": "I *was* in the eight-hundred-meter race.", "zh": "我要參加八百公尺賽跑。"},
+        {"en": "My mom *made* a big breakfast, but I only *drank* some milk.", "zh": "我媽做了豐盛的早餐，但我只喝了一點牛奶。"},
+        {"en": "At school, I *met* my best friend, Kevin.", "zh": "到了學校，我遇到我最好的朋友 Kevin。"},
+        {"en": "He *brought* me a lucky bracelet and *said*, \"You will win!\"", "zh": "他帶了一條幸運手環給我，還說：「你會贏！」"},
+        {"en": "I *thought* he was just being kind.", "zh": "我以為他只是在說好聽話。"},
+        {"en": "When the race *began*, I *ran* as fast as I could.", "zh": "比賽一開始，我就盡全力地跑。"},
+        {"en": "Halfway through, I *fell* down and *hurt* my knee.", "zh": "跑到一半，我跌倒了，膝蓋受傷。"},
+        {"en": "Everyone *saw* it, and I wanted to give up.", "zh": "大家都看到了，我好想放棄。"},
+        {"en": "But then I *heard* my class shouting my name.", "zh": "但接著我聽見全班在喊我的名字。"},
+        {"en": "So I *stood* up and *ran* again.", "zh": "所以我站起來，再次往前跑。"},
+        {"en": "I did not *come* first. I *came* fourth.", "zh": "我沒有得第一，我是第四名。"},
+        {"en": "But when I crossed the line, my whole class *ran* to me.", "zh": "但當我衝過終點線，全班都朝我跑來。"},
+        {"en": "They *caught* me, and Kevin *gave* me a big smile.", "zh": "他們扶住我，Kevin 給了我一個大大的微笑。"},
+        {"en": "That day, I *lost* the race, but I *found* something better.", "zh": "那天，我輸了比賽，卻找到了更棒的東西。"},
+        {"en": "I finally *understood* what real friends are.", "zh": "我終於明白了真正的朋友是什麼。"}
+      ],
+      "verbs": [
+        {"v": "be", "ved": "was / were", "vpp": "been", "zh": "是"},
+        {"v": "wake", "ved": "woke", "vpp": "woken", "zh": "醒來"},
+        {"v": "feel", "ved": "felt", "vpp": "felt", "zh": "感覺"},
+        {"v": "make", "ved": "made", "vpp": "made", "zh": "製作"},
+        {"v": "drink", "ved": "drank", "vpp": "drunk", "zh": "喝"},
+        {"v": "meet", "ved": "met", "vpp": "met", "zh": "遇見"},
+        {"v": "bring", "ved": "brought", "vpp": "brought", "zh": "帶來"},
+        {"v": "say", "ved": "said", "vpp": "said", "zh": "說"},
+        {"v": "think", "ved": "thought", "vpp": "thought", "zh": "想；認為"},
+        {"v": "begin", "ved": "began", "vpp": "begun", "zh": "開始"},
+        {"v": "run", "ved": "ran", "vpp": "run", "zh": "跑"},
+        {"v": "fall", "ved": "fell", "vpp": "fallen", "zh": "跌倒；落下"},
+        {"v": "hurt", "ved": "hurt", "vpp": "hurt", "zh": "使受傷"},
+        {"v": "see", "ved": "saw", "vpp": "seen", "zh": "看見"},
+        {"v": "hear", "ved": "heard", "vpp": "heard", "zh": "聽見"},
+        {"v": "stand", "ved": "stood", "vpp": "stood", "zh": "站"},
+        {"v": "come", "ved": "came", "vpp": "come", "zh": "來"},
+        {"v": "catch", "ved": "caught", "vpp": "caught", "zh": "抓住；接住"},
+        {"v": "give", "ved": "gave", "vpp": "given", "zh": "給"},
+        {"v": "lose", "ved": "lost", "vpp": "lost", "zh": "輸；失去"},
+        {"v": "find", "ved": "found", "vpp": "found", "zh": "找到"},
+        {"v": "understand", "ved": "understood", "vpp": "understood", "zh": "了解"}
+      ],
+      "questions": [
+        {"q": "Why did the boy only drink some milk in the morning?", "hint": "用 felt 回答", "a": "Because he felt nervous. (因為他覺得緊張。)"},
+        {"q": "What did the boy do after he fell down?", "hint": "用 stood、ran 回答", "a": "He stood up and ran again. (他站起來，再次往前跑。)"},
+        {"q": "He lost the race, but what did he find?", "hint": "用 found 回答", "a": "He found what real friends are. (他找到了真正的朋友是什麼／找到了真正的友情。)"}
+      ]
+    }
+  ]
+}
