@@ -103,6 +103,35 @@
   .backbtn{display:inline-flex;align-items:center;gap:6px;background:none;border:none;
     color:var(--accent);font-size:15px;font-weight:700;padding:8px 0;cursor:pointer;margin-top:12px}
   .menu-intro{color:var(--sub);font-size:13.5px;margin:14px 2px 2px;line-height:1.7}
+
+  /* verb self-test */
+  .vt-card{border:2px solid #d9e6ff}
+  .vt-intro{font-size:14px;color:var(--ink);line-height:1.8;margin:10px 0}
+  .vt-eg{background:#f4f8ff;border-radius:10px;padding:9px 11px;font-size:12.5px;color:var(--sub);margin:8px 0}
+  .vt-eg b{color:var(--accent)}
+  .vt-start,.vt-check{display:block;width:100%;border:none;border-radius:12px;padding:14px;
+    font-size:16px;font-weight:800;color:#fff;background:var(--accent);cursor:pointer;margin-top:10px}
+  .vt-check{background:var(--ok)}
+  .vt-q{border:1px solid var(--line);border-radius:12px;padding:12px;margin:10px 0;background:#fafcff}
+  .vt-head{font-size:14px;margin-bottom:9px}
+  .vt-n{display:inline-block;min-width:22px;height:22px;line-height:22px;text-align:center;
+    background:var(--accent);color:#fff;border-radius:50%;font-size:12px;font-weight:800;margin-right:6px}
+  .vt-given{background:#fff0ed;color:var(--verb);border-radius:8px;padding:2px 9px;font-weight:600}
+  .vt-given b{font-size:16px}
+  .vt-mean{color:var(--sub);font-size:12.5px;margin-left:4px}
+  .vt-fields{display:flex;gap:10px;flex-wrap:wrap}
+  .vt-field{flex:1;min-width:120px}
+  .vt-field label{display:block;font-size:12px;color:var(--sub);font-weight:700;margin-bottom:3px}
+  .vt-field input{width:100%;box-sizing:border-box;font-size:17px;padding:10px 11px;
+    border:1.5px solid var(--line);border-radius:9px;background:#fff;outline:none}
+  .vt-field input:focus{border-color:var(--accent)}
+  .vt-field input.ok{border-color:var(--ok);background:#eafaf0;color:#166a3e;font-weight:700}
+  .vt-field input.bad{border-color:#ea5455;background:#fdeeee;color:#b83b3b;font-weight:700}
+  .vt-ans{display:none;margin-top:8px;font-size:13px;color:#166a3e;background:#eafaf0;
+    border-radius:8px;padding:7px 10px}
+  .vt-ans.miss{color:#b83b3b;background:#fdeeee}
+  .vt-score{display:none;text-align:center;font-size:18px;font-weight:800;margin:14px 0 4px}
+  .vt-score .msg{display:block;font-size:13px;font-weight:600;color:var(--sub);margin-top:3px}
 </style>
 </head>
 <body>
@@ -277,6 +306,90 @@ function renderStory(st){
     qbody.appendChild(qd);
   });
   qcard.appendChild(qsec); app.appendChild(qcard);
+
+  renderVerbTest(st);
+}
+
+const VLABEL = {base:'原形', past:'過去式', pp:'過去分詞'};
+function vtok(s){ return (s.toLowerCase().match(/[a-z]+/g) || []); }
+function fieldTokens(v, k){ return k==='base' ? [v.v.toLowerCase()] : (k==='past' ? vtok(v.ved) : vtok(v.vpp)); }
+function fieldShow(v, k){ return k==='base' ? v.v : (k==='past' ? v.ved : v.vpp); }
+function fieldFirst(v, k){ return fieldShow(v,k).split('/')[0].trim(); }
+
+function renderVerbTest(st){
+  const card = document.createElement('div'); card.className='card vt-card';
+  card.innerHTML = '<div class="sec-h" style="cursor:default"><span>✍️ 動詞三態自我測驗</span></div>';
+  const intro = document.createElement('div'); intro.className='vt-intro';
+  intro.innerHTML = '系統隨機給你三態中的<b>一個</b>，你要<b>親手打出另外兩個</b>（沒有選項，不能用猜的）。'
+    + '填完按「對答案」看結果與正解。';
+  const eg = document.createElement('div'); eg.className='vt-eg';
+  eg.innerHTML = '例：已知 <b>過去式 ran</b>（跑）→ 你要填　原形 <b>run</b>、過去分詞 <b>run</b>';
+  const area = document.createElement('div');
+  const start = document.createElement('button'); start.className='vt-start';
+  start.textContent = '開始測驗 ▶︎（'+st.verbs.length+' 題）';
+  card.appendChild(intro); card.appendChild(eg); card.appendChild(start); card.appendChild(area);
+  app.appendChild(card);
+
+  function build(){
+    area.innerHTML=''; start.style.display='none';
+    const keys=['base','past','pp'];
+    const qs = st.verbs.map(v=>{
+      const shown = keys[Math.floor(Math.random()*3)];
+      return { v, shown, ask: keys.filter(k=>k!==shown) };
+    }).sort(()=> Math.random()-0.5);
+
+    qs.forEach((q,i)=>{
+      const row=document.createElement('div'); row.className='vt-q'; row._q=q;
+      let fields='';
+      q.ask.forEach(k=>{
+        fields += `<div class="vt-field"><label>${VLABEL[k]}</label>`
+          + `<input data-field="${k}" type="text" inputmode="text" autocapitalize="none" `
+          + `autocorrect="off" autocomplete="off" spellcheck="false"></div>`;
+      });
+      row.innerHTML = `<div class="vt-head"><span class="vt-n">${i+1}</span>`
+        + `已知 <span class="vt-given">${VLABEL[q.shown]}：<b>${fieldFirst(q.v,q.shown)}</b></span>`
+        + `<span class="vt-mean">（${q.v.zh}）</span></div>`
+        + `<div class="vt-fields">${fields}</div><div class="vt-ans"></div>`;
+      area.appendChild(row);
+    });
+    const score=document.createElement('div'); score.className='vt-score';
+    const check=document.createElement('button'); check.className='vt-check'; check.textContent='對答案 ✓';
+    area.appendChild(score); area.appendChild(check);
+
+    // Enter 鍵跳下一格
+    const inputs=[...area.querySelectorAll('input')];
+    inputs.forEach((inp,idx)=> inp.addEventListener('keydown',e=>{
+      if(e.key==='Enter'){ e.preventDefault(); if(idx+1<inputs.length) inputs[idx+1].focus(); else check.click(); }
+    }));
+
+    check.onclick=()=>{
+      if(check.dataset.done){ build(); return; }  // 再測一次
+      let correct=0, total=0;
+      area.querySelectorAll('.vt-q').forEach(row=>{
+        const q=row._q; const missed=[];
+        q.ask.forEach(k=>{
+          const inp=row.querySelector(`input[data-field="${k}"]`);
+          const val=(inp.value||'').trim().toLowerCase();
+          total++;
+          if(val && fieldTokens(q.v,k).includes(val)){ inp.classList.add('ok'); correct++; }
+          else{ inp.classList.add('bad'); missed.push(`${VLABEL[k]} ${fieldShow(q.v,k)}`); }
+          inp.disabled=true;
+        });
+        const ans=row.querySelector('.vt-ans');
+        if(missed.length){ ans.className='vt-ans miss'; ans.innerHTML='正解 → '+missed.join('　'); }
+        else{ ans.className='vt-ans'; ans.innerHTML='✓ 全對！'; }
+        ans.style.display='block';
+      });
+      const pct = total? correct/total : 0;
+      const msg = pct===1 ? '太厲害了，全部答對！🎉' : pct>=0.8 ? '很棒，快全對了！💪'
+        : pct>=0.5 ? '不錯，再多練幾次會更熟 👍' : '沒關係，看正解複習後再測一次 🔁';
+      score.innerHTML=`答對 ${correct} / ${total}<span class="msg">${msg}</span>`;
+      score.style.display='block';
+      check.textContent='再測一次 ↺（重新隨機出題）'; check.dataset.done='1';
+      score.scrollIntoView({behavior:'smooth', block:'center'});
+    };
+  }
+  start.onclick=build;
 }
 
 let DATA = null;
