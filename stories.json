@@ -4,10 +4,10 @@
   "subtitle": "邊聽、邊讀、邊記動詞三態",
   "grade": "七年級",
   "verbs_ref": "verbs_grade7_v1.json",
-  "human_verified": true,
   "verified_by": "Fable 5 自撰故事 + 動詞形態對照 verbs_grade7_v1.json 2026-07-06",
   "schema_version": 1,
-  "count": 17
+  "count": 17,
+  "verification": "machine_gated(gate_stories.py) + model_reviewed(Fable 5);未經人工逐篇驗收——家長抽查後才可標 human_verified"
  },
  "stories": [
   {
