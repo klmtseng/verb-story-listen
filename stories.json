@@ -7,7 +7,7 @@
   "human_verified": true,
   "verified_by": "Fable 5 自撰故事 + 動詞形態對照 verbs_grade7_v1.json 2026-07-06",
   "schema_version": 1,
-  "count": 14
+  "count": 17
  },
  "stories": [
   {
@@ -2007,6 +2007,994 @@
      "q": "What did the loss do for Ben in the end?",
      "hint": "用 drive 回答",
      "a": "It had *driven* him to practice harder. 它激勵他更努力練習了。"
+    }
+   ]
+  },
+  {
+   "id": "the-secret-of-storm-cave",
+   "title": "The Secret of Storm Cave",
+   "zh_title": "暴風洞的秘密",
+   "audio_normal": "audio/the-secret-of-storm-cave_normal.mp3",
+   "audio_slow": "audio/the-secret-of-storm-cave_slow.mp3",
+   "group": "mixed",
+   "genre": "adventure",
+   "sentences": [
+    {
+     "en": "Last summer, Leo and his best friend Mia *found* an old map inside a dusty book at the village library.",
+     "zh": "去年夏天，里歐和他最好的朋友米雅在村子的圖書館裡，從一本舊書中找到了一張古老的地圖。"
+    },
+    {
+     "en": "The map *showed* a hidden cave deep in the forest, marked with an X and the words \"Storm Cave.\"",
+     "zh": "地圖顯示了一個藏在森林深處的洞穴，上面標著一個X和「暴風洞」幾個字。"
+    },
+    {
+     "en": "\"Someone *drew* this map over a hundred years ago,\" Leo *said*, his eyes wide with excitement.",
+     "zh": "「某個人在一百多年前畫了這張地圖，」里歐興奮地說，眼睛睜得大大的。"
+    },
+    {
+     "en": "They *put* on their backpacks and *left* home before sunrise the next morning.",
+     "zh": "隔天早上，他們背上背包，在日出之前就出發了。"
+    },
+    {
+     "en": "The two friends walked through tall trees for two hours until they *came* to a steep rocky hill.",
+     "zh": "兩個朋友穿越高大的樹木走了兩個小時，直到他們來到一座陡峭的岩石山丘。"
+    },
+    {
+     "en": "At the base of the hill, they *saw* a narrow opening half-hidden by vines — the entrance to Storm Cave.",
+     "zh": "在山丘的底部，他們看見了一個被藤蔓遮住大半的窄小入口——那就是暴風洞的入口。"
+    },
+    {
+     "en": "Leo *took* a deep breath, *kept* his flashlight steady, and *led* the way inside.",
+     "zh": "里歐深吸一口氣，握穩手電筒，然後帶路走了進去。"
+    },
+    {
+     "en": "The air *grew* cold and damp as they moved deeper into the darkness.",
+     "zh": "隨著他們越走越深，空氣漸漸變得寒冷潮濕。"
+    },
+    {
+     "en": "Suddenly, Mia *heard* a strange sound echoing off the cave walls.",
+     "zh": "突然間，米雅聽見了一個奇怪的聲音在洞壁上迴響。"
+    },
+    {
+     "en": "She *held* Leo's arm and *spoke* quietly: \"Did you hear that?\"",
+     "zh": "她抓緊里歐的手臂，輕聲說道：「你聽到那個聲音了嗎？」"
+    },
+    {
+     "en": "Leo *shone* his flashlight ahead and they *saw* a huge colony of bats hanging from the ceiling.",
+     "zh": "里歐將手電筒照向前方，他們看見了一大群蝙蝠倒掛在洞頂上。"
+    },
+    {
+     "en": "\"Don't make a sound,\" Leo *told* her, and they moved carefully past the sleeping bats.",
+     "zh": "「不要發出任何聲音，」里歐告訴她，然後他們小心翼翼地經過了沉睡中的蝙蝠。"
+    },
+    {
+     "en": "After a few minutes, they *felt* the ground slope steeply downward.",
+     "zh": "幾分鐘後，他們感覺到地面急遽向下傾斜。"
+    },
+    {
+     "en": "They *slid* down the slippery path and landed in a wide underground chamber.",
+     "zh": "他們沿著濕滑的路滑了下去，落在一個寬闊的地下大廳裡。"
+    },
+    {
+     "en": "In the center of the room, half-buried in mud, *sat* an old wooden chest.",
+     "zh": "在房間的中央，半埋在泥土中，放著一個古老的木箱。"
+    },
+    {
+     "en": "Mia *ran* toward it and *dug* away the mud with her bare hands.",
+     "zh": "米雅跑了過去，用雙手挖開了泥土。"
+    },
+    {
+     "en": "She *found* a rusty lock, but *broke* a stick trying to pry it open.",
+     "zh": "她找到了一把生鏽的鎖，但撬鎖時卻折斷了一根棍子。"
+    },
+    {
+     "en": "Leo *thought* for a moment, then *hit* the lock hard with a heavy rock.",
+     "zh": "里歐想了一下，然後用一塊重石頭用力敲打那把鎖。"
+    },
+    {
+     "en": "The lock *fell* off, and they opened the chest with shaking hands.",
+     "zh": "鎖掉落了，他們用顫抖的雙手打開了箱子。"
+    },
+    {
+     "en": "Inside, they *saw* old gold coins, a jade necklace, and a handwritten letter.",
+     "zh": "裡面，他們看到了古老的金幣、一條玉項鍊，還有一封手寫的信。"
+    },
+    {
+     "en": "But just then, water *began* to pour through cracks in the cave wall.",
+     "zh": "但就在這時，水開始從洞壁的裂縫中湧了進來。"
+    },
+    {
+     "en": "Leo *knew* they had to leave fast — the water was rising quickly.",
+     "zh": "里歐知道他們必須快速離開——水正在迅速上升。"
+    },
+    {
+     "en": "They *took* the letter and a handful of coins, *put* everything in the backpack, and *ran* back toward the exit.",
+     "zh": "他們拿走了信和一把金幣，將所有東西放入背包，然後跑向出口。"
+    },
+    {
+     "en": "The cold water *rose* fast and soon reached their knees.",
+     "zh": "冰冷的水上升得很快，很快就漫到了他們的膝蓋。"
+    },
+    {
+     "en": "Mia slipped on a wet rock and *fell* into the water, but Leo *caught* her hand just in time.",
+     "zh": "米雅在濕滑的岩石上滑倒，跌入水中，但里歐及時抓住了她的手。"
+    },
+    {
+     "en": "They *fought* against the current and *kept* pushing forward, step by step.",
+     "zh": "他們對抗著水流，一步一步地堅持向前推進。"
+    },
+    {
+     "en": "Finally, Leo *saw* a small beam of light ahead — the exit!",
+     "zh": "終於，里歐看到了前方一束微弱的光——那是出口！"
+    },
+    {
+     "en": "They *swam* through the last flooded section and *burst* out of the cave into the pouring rain.",
+     "zh": "他們游過最後一段被水淹沒的通道，衝出洞穴，來到了傾盆大雨之中。"
+    },
+    {
+     "en": "Outside, they *stood* on the hillside, soaking wet and out of breath, but safe.",
+     "zh": "在外面，他們站在山坡上，渾身濕透、上氣不接下氣，但他們安全了。"
+    },
+    {
+     "en": "Leo *held* up the old letter and *read* the last line aloud.",
+     "zh": "里歐高高舉起那封舊信，大聲讀出最後一行。"
+    },
+    {
+     "en": "The letter *said*, \"This cave gives its treasure only to the brave.\"",
+     "zh": "信上寫著：「這個洞穴只把寶藏給予勇敢的人。」"
+    },
+    {
+     "en": "Mia smiled and *said*, \"I think we just *won* today.\"",
+     "zh": "米雅微笑著說：「我覺得我們今天贏了。」"
+    }
+   ],
+   "verbs": [
+    {
+     "v": "find",
+     "ved": "found",
+     "vpp": "found",
+     "zh": "找到；發現"
+    },
+    {
+     "v": "show",
+     "ved": "showed",
+     "vpp": "shown",
+     "zh": "表示；展現"
+    },
+    {
+     "v": "draw",
+     "ved": "drew",
+     "vpp": "drawn",
+     "zh": "畫；拉"
+    },
+    {
+     "v": "say",
+     "ved": "said",
+     "vpp": "said",
+     "zh": "說"
+    },
+    {
+     "v": "put",
+     "ved": "put",
+     "vpp": "put",
+     "zh": "放置"
+    },
+    {
+     "v": "leave",
+     "ved": "left",
+     "vpp": "left",
+     "zh": "離開"
+    },
+    {
+     "v": "come",
+     "ved": "came",
+     "vpp": "come",
+     "zh": "來"
+    },
+    {
+     "v": "see",
+     "ved": "saw",
+     "vpp": "seen",
+     "zh": "看"
+    },
+    {
+     "v": "take",
+     "ved": "took",
+     "vpp": "taken",
+     "zh": "拿取"
+    },
+    {
+     "v": "keep",
+     "ved": "kept",
+     "vpp": "kept",
+     "zh": "保持"
+    },
+    {
+     "v": "lead",
+     "ved": "led",
+     "vpp": "led",
+     "zh": "領導"
+    },
+    {
+     "v": "grow",
+     "ved": "grew",
+     "vpp": "grown",
+     "zh": "成長"
+    },
+    {
+     "v": "hear",
+     "ved": "heard",
+     "vpp": "heard",
+     "zh": "聽"
+    },
+    {
+     "v": "hold",
+     "ved": "held",
+     "vpp": "held",
+     "zh": "握住；支撐"
+    },
+    {
+     "v": "speak",
+     "ved": "spoke",
+     "vpp": "spoken",
+     "zh": "說；演講"
+    },
+    {
+     "v": "shine",
+     "ved": "shone（照耀）/ shined（擦亮）",
+     "vpp": "shone（照耀）/ shined（擦亮）",
+     "zh": "照耀；擦亮"
+    },
+    {
+     "v": "tell",
+     "ved": "told",
+     "vpp": "told",
+     "zh": "告訴"
+    },
+    {
+     "v": "feel",
+     "ved": "felt",
+     "vpp": "felt",
+     "zh": "感覺"
+    },
+    {
+     "v": "slide",
+     "ved": "slid",
+     "vpp": "slid",
+     "zh": "滑；滑動"
+    },
+    {
+     "v": "sit",
+     "ved": "sat",
+     "vpp": "sat",
+     "zh": "坐"
+    },
+    {
+     "v": "run",
+     "ved": "ran",
+     "vpp": "run",
+     "zh": "跑；經營"
+    },
+    {
+     "v": "dig",
+     "ved": "dug",
+     "vpp": "dug",
+     "zh": "挖"
+    },
+    {
+     "v": "break",
+     "ved": "broke",
+     "vpp": "broken",
+     "zh": "打破；切斷"
+    },
+    {
+     "v": "think",
+     "ved": "thought",
+     "vpp": "thought",
+     "zh": "想；認為"
+    },
+    {
+     "v": "hit",
+     "ved": "hit",
+     "vpp": "hit",
+     "zh": "打；侵襲"
+    },
+    {
+     "v": "fall",
+     "ved": "fell",
+     "vpp": "fallen",
+     "zh": "倒下；落下"
+    },
+    {
+     "v": "begin",
+     "ved": "began",
+     "vpp": "begun",
+     "zh": "開始"
+    },
+    {
+     "v": "know",
+     "ved": "knew",
+     "vpp": "known",
+     "zh": "知道"
+    },
+    {
+     "v": "rise",
+     "ved": "rose",
+     "vpp": "risen",
+     "zh": "上升"
+    },
+    {
+     "v": "catch",
+     "ved": "caught",
+     "vpp": "caught",
+     "zh": "抓；捉；捕"
+    },
+    {
+     "v": "fight",
+     "ved": "fought",
+     "vpp": "fought",
+     "zh": "吵架；打架"
+    },
+    {
+     "v": "swim",
+     "ved": "swam",
+     "vpp": "swum",
+     "zh": "游泳"
+    },
+    {
+     "v": "burst",
+     "ved": "burst",
+     "vpp": "burst",
+     "zh": "突然爆開"
+    },
+    {
+     "v": "stand",
+     "ved": "stood",
+     "vpp": "stood",
+     "zh": "站立"
+    },
+    {
+     "v": "read",
+     "ved": "read",
+     "vpp": "read",
+     "zh": "閱讀"
+    },
+    {
+     "v": "win",
+     "ved": "won",
+     "vpp": "won",
+     "zh": "贏得"
+    }
+   ],
+   "questions": [
+    {
+     "q": "What did Leo and Mia find in the village library?",
+     "hint": "用 find 回答",
+     "a": "They *found* an old map inside a dusty book. (他們在一本舊書裡找到了一張古老的地圖。)"
+    },
+    {
+     "q": "How did Leo and Mia escape from the flooded cave?",
+     "hint": "用 swim 和 burst 回答",
+     "a": "They *swam* through the flooded section and *burst* out of the cave. (他們游過被水淹沒的通道，衝出了洞穴。)"
+    },
+    {
+     "q": "Who helped Mia when she fell into the water?",
+     "hint": "用 catch 回答",
+     "a": "Leo *caught* her hand just in time. (里歐及時抓住了她的手。)"
+    }
+   ]
+  },
+  {
+   "id": "the-day-we-made-a-mini-water-cycle",
+   "title": "The Day We Made a Mini Water Cycle",
+   "zh_title": "那天我們做了一個迷你水循環",
+   "audio_normal": "audio/the-day-we-made-a-mini-water-cycle_normal.mp3",
+   "audio_slow": "audio/the-day-we-made-a-mini-water-cycle_slow.mp3",
+   "group": "mixed",
+   "genre": "science",
+   "sentences": [
+    {
+     "en": "Last Monday, our science teacher, Ms. Lin, *brought* a metal pot, a cold glass lid, and a bag of ice to class.",
+     "zh": "上週一，我們的自然科老師林老師帶了一個金屬鍋、一個冷玻璃鍋蓋和一袋冰塊來上課。"
+    },
+    {
+     "en": "\"Today,\" she *said*, \"we are going to learn about the water cycle.\"",
+     "zh": "「今天，」她說，「我們要來學習水循環。」"
+    },
+    {
+     "en": "She *set* the pot on a small electric heater and *put* some water in it.",
+     "zh": "她把鍋子架在一個小電熱爐上，並往鍋裡倒了一些水。"
+    },
+    {
+     "en": "The whole class *sat* around the lab table and watched with curiosity.",
+     "zh": "全班同學好奇地圍坐在實驗桌旁，眼睛一眨不眨地看著。"
+    },
+    {
+     "en": "After a few minutes, we *saw* tiny bubbles forming at the bottom of the pot.",
+     "zh": "幾分鐘後，我們看見鍋底開始冒出細小的泡泡。"
+    },
+    {
+     "en": "The water *began* to boil, and white steam *rose* into the air.",
+     "zh": "水開始沸騰，白色的蒸氣升入空中。"
+    },
+    {
+     "en": "\"What you see rising from the pot is called water vapor,\" Ms. Lin *said*, \"and when water heats up and changes into a gas, we call that evaporation.\"",
+     "zh": "「你們看到從鍋中升起的東西叫做水蒸氣，」林老師說，「當水受熱變成氣體，我們稱這個過程為蒸發。」"
+    },
+    {
+     "en": "She *took* the cold glass lid and *held* it just above the rising steam.",
+     "zh": "她拿起那個冰冷的玻璃鍋蓋，把它架在上升的蒸氣正上方。"
+    },
+    {
+     "en": "Almost at once, we *saw* something exciting—tiny water drops *began* to appear on the inside of the lid.",
+     "zh": "幾乎立刻，我們就看見了令人興奮的事——細小的水珠開始在鍋蓋內側出現。"
+    },
+    {
+     "en": "\"Did you see that?\" Ms. Lin *said*, pointing at the lid.",
+     "zh": "「你們看到了嗎？」林老師指著鍋蓋說。"
+    },
+    {
+     "en": "\"The water vapor *rose* from the hot water and *hit* the cold surface of the lid.\"",
+     "zh": "「水蒸氣從熱水中升起，撞上了鍋蓋冰冷的表面。」"
+    },
+    {
+     "en": "\"The cold lid *made* the vapor cool down and become liquid water drops again.\"",
+     "zh": "「冰冷的鍋蓋讓蒸氣冷卻，再次變回液態的小水珠。」"
+    },
+    {
+     "en": "\"This process is called condensation,\" she *told* us.",
+     "zh": "「這個過程叫做凝結，」她告訴我們。"
+    },
+    {
+     "en": "We watched as more and more drops formed on the lid.",
+     "zh": "我們看著越來越多的水珠在鍋蓋上形成。"
+    },
+    {
+     "en": "The drops *grew* bigger and heavier over time.",
+     "zh": "這些水珠慢慢地越長越大，也越來越重。"
+    },
+    {
+     "en": "Then some of them *fell* back into the pot, just like raindrops falling from the sky.",
+     "zh": "接著，其中一些水珠落回了鍋裡，就像天上的雨滴落下一樣。"
+    },
+    {
+     "en": "\"What you just *saw* is called precipitation,\" Ms. Lin *said* with a smile.",
+     "zh": "「你們剛才看到的就叫做降水，」林老師微笑著說。"
+    },
+    {
+     "en": "Next, she *took* a bowl filled with ice and *held* it above the steam instead.",
+     "zh": "接下來，她改用一個裝滿冰塊的碗，放在蒸氣的上方。"
+    },
+    {
+     "en": "The cold bottom of the bowl *became* covered with tiny drops, and they *fell* back down just the same.",
+     "zh": "碗的冰冷底部很快布滿了細小水珠，它們同樣向下落了下去。"
+    },
+    {
+     "en": "\"Now let me show you the big picture,\" Ms. Lin *said*.",
+     "zh": "「現在讓我來告訴你們這背後更大的圖景，」林老師說。"
+    },
+    {
+     "en": "She *drew* a diagram on the board showing the sun, the ocean, clouds, and rain.",
+     "zh": "她在黑板上畫了一張圖，圖中有太陽、海洋、雲和雨。"
+    },
+    {
+     "en": "\"In nature,\" she explained, \"the sun gives heat energy to oceans and lakes.\"",
+     "zh": "「在自然界中，」她解釋道，「太陽給海洋和湖泊提供熱能。」"
+    },
+    {
+     "en": "\"That heat makes the water evaporate and rise as water vapor into the sky.\"",
+     "zh": "「這股熱能讓水蒸發，以水蒸氣的形式升入天空。」"
+    },
+    {
+     "en": "\"High up in the sky, the water vapor meets cold air and condenses into tiny water droplets.\"",
+     "zh": "「在天空的高處，水蒸氣遇到冷空氣，凝結成細小的水滴。」"
+    },
+    {
+     "en": "\"Billions of those tiny droplets come together and form clouds.\"",
+     "zh": "「數十億個細小水滴聚集在一起，形成了雲。」"
+    },
+    {
+     "en": "\"When the droplets grow heavy enough, they fall as rain or snow—and that is precipitation.\"",
+     "zh": "「當水滴重到一定程度，就會以雨或雪的形式落下——這就是降水。」"
+    },
+    {
+     "en": "\"The water then flows back into rivers and oceans, and the whole process begins again.\"",
+     "zh": "「水接著流回河流和海洋，整個過程又重新開始。」"
+    },
+    {
+     "en": "\"This endless loop is what we call the water cycle,\" she *said*.",
+     "zh": "「這個無盡的循環，就是我們所說的水循環，」她說。"
+    },
+    {
+     "en": "Suddenly, everything *made* sense to us.",
+     "zh": "突然間，一切對我們來說都豁然開朗了。"
+    },
+    {
+     "en": "One student, Kevin, raised his hand and *said*, \"So the water in our pot *went* through a mini water cycle!\"",
+     "zh": "一位叫 Kevin 的同學舉手說：「所以我們鍋裡的水也經歷了一個迷你版的水循環！」"
+    },
+    {
+     "en": "Ms. Lin smiled and *said*, \"Exactly right, Kevin.\"",
+     "zh": "林老師微笑著說：「完全正確，Kevin。」"
+    },
+    {
+     "en": "That day, we all *left* class with a brand-new understanding of how water keeps moving around our planet.",
+     "zh": "那天，我們都帶著對水如何在地球上不斷循環流動的全新理解離開了教室。"
+    }
+   ],
+   "verbs": [
+    {
+     "v": "bring",
+     "ved": "brought",
+     "vpp": "brought",
+     "zh": "帶來"
+    },
+    {
+     "v": "say",
+     "ved": "said",
+     "vpp": "said",
+     "zh": "說"
+    },
+    {
+     "v": "set",
+     "ved": "set",
+     "vpp": "set",
+     "zh": "安置；安裝"
+    },
+    {
+     "v": "put",
+     "ved": "put",
+     "vpp": "put",
+     "zh": "放置"
+    },
+    {
+     "v": "sit",
+     "ved": "sat",
+     "vpp": "sat",
+     "zh": "坐"
+    },
+    {
+     "v": "see",
+     "ved": "saw",
+     "vpp": "seen",
+     "zh": "看"
+    },
+    {
+     "v": "begin",
+     "ved": "began",
+     "vpp": "begun",
+     "zh": "開始"
+    },
+    {
+     "v": "rise",
+     "ved": "rose",
+     "vpp": "risen",
+     "zh": "上升"
+    },
+    {
+     "v": "take",
+     "ved": "took",
+     "vpp": "taken",
+     "zh": "拿取"
+    },
+    {
+     "v": "hold",
+     "ved": "held",
+     "vpp": "held",
+     "zh": "握住；支撐"
+    },
+    {
+     "v": "hit",
+     "ved": "hit",
+     "vpp": "hit",
+     "zh": "打；侵襲"
+    },
+    {
+     "v": "make",
+     "ved": "made",
+     "vpp": "made",
+     "zh": "製造"
+    },
+    {
+     "v": "tell",
+     "ved": "told",
+     "vpp": "told",
+     "zh": "告訴"
+    },
+    {
+     "v": "grow",
+     "ved": "grew",
+     "vpp": "grown",
+     "zh": "成長"
+    },
+    {
+     "v": "fall",
+     "ved": "fell",
+     "vpp": "fallen",
+     "zh": "倒下；落下"
+    },
+    {
+     "v": "become",
+     "ved": "became",
+     "vpp": "become",
+     "zh": "變成"
+    },
+    {
+     "v": "draw",
+     "ved": "drew",
+     "vpp": "drawn",
+     "zh": "畫；拉"
+    },
+    {
+     "v": "go",
+     "ved": "went",
+     "vpp": "gone",
+     "zh": "去"
+    },
+    {
+     "v": "leave",
+     "ved": "left",
+     "vpp": "left",
+     "zh": "離開"
+    }
+   ],
+   "questions": [
+    {
+     "q": "Why did tiny water drops form on the cold glass lid?",
+     "hint": "用 rise、hit、make、become 回答",
+     "a": "The water vapor *rose* from the hot water and *hit* the cold surface of the lid. The cold surface *made* the vapor cool down and become liquid water drops again. This process is called condensation. (水蒸氣從熱水中升起，撞上鍋蓋的冷表面，冰冷的表面讓蒸氣冷卻，再次變成液態水珠——這個過程叫做凝結。)"
+    },
+    {
+     "q": "What two cold objects did Ms. Lin use during the experiment, and what did she do with them?",
+     "hint": "用 take、hold 回答",
+     "a": "She *took* a cold glass lid and *held* it above the steam, and she also *took* a bowl filled with ice and *held* it above the steam. (她拿了一個冷玻璃鍋蓋並把它架在蒸氣上方，也拿了一個裝滿冰塊的碗並把它放在蒸氣上方。)"
+    },
+    {
+     "q": "How does the water cycle work in nature? Explain the three key steps.",
+     "hint": "用 give、rise、become、fall 回答",
+     "a": "The sun gives heat energy to oceans and lakes, making the water evaporate and rise as water vapor (evaporation). High in the sky, the vapor condenses into tiny droplets that form clouds (condensation). When the droplets grow heavy enough, they fall as rain or snow (precipitation), and the water flows back into rivers and oceans to begin the cycle again. (太陽提供熱能讓海洋湖泊的水蒸發升空（蒸發）；蒸氣在高空遇冷凝結成雲（凝結）；水滴夠重時以雨或雪形式落下（降水），再流回河流海洋，循環不止。)"
+    }
+   ]
+  },
+  {
+   "id": "the-new-kid",
+   "title": "The New Kid",
+   "zh_title": "新來的孩子",
+   "audio_normal": "audio/the-new-kid_normal.mp3",
+   "audio_slow": "audio/the-new-kid_slow.mp3",
+   "group": "mixed",
+   "genre": "school",
+   "sentences": [
+    {
+     "en": "Last autumn, I *came* to a new junior high school in Taipei as a transfer student.",
+     "zh": "去年秋天，我以轉學生身分來到台北一所新國中。"
+    },
+    {
+     "en": "I *wore* my new uniform for the first time and *felt* nervous as I walked through the gate.",
+     "zh": "我第一次穿上新制服，走進校門時感到很緊張。"
+    },
+    {
+     "en": "My homeroom teacher *took* me to the classroom and *told* everyone my name.",
+     "zh": "導師帶我到教室，向全班同學報上我的名字。"
+    },
+    {
+     "en": "I *stood* at the front of the room and *said* a short greeting.",
+     "zh": "我站在教室前面，說了簡短的問候語。"
+    },
+    {
+     "en": "Thirty pairs of eyes *were* on me, and I *felt* like a fish in a glass tank.",
+     "zh": "三十雙眼睛盯著我，我感覺像魚缸裡的魚。"
+    },
+    {
+     "en": "I *sat* at a desk near the window and tried to stay calm.",
+     "zh": "我坐在靠窗的座位，努力保持冷靜。"
+    },
+    {
+     "en": "The morning *went* by slowly, and I barely *spoke* to anyone.",
+     "zh": "上午緩慢地過去，我幾乎沒和任何人說話。"
+    },
+    {
+     "en": "At lunch, I *went* to the cafeteria alone and *found* a small table in the corner.",
+     "zh": "午餐時，我獨自去了餐廳，找到角落的一張小桌子。"
+    },
+    {
+     "en": "I *ate* my lunch quietly and *thought* that this school would never feel like home.",
+     "zh": "我靜靜地吃著午餐，心想這所學校恐怕永遠不會有家的感覺。"
+    },
+    {
+     "en": "Just then, a girl *came* over with a warm smile and *said*, \"Can I sit here?\"",
+     "zh": "就在這時，一個女生帶著溫暖的笑容走過來說：「我可以坐這裡嗎？」"
+    },
+    {
+     "en": "Her name *was* Mei, and she *told* me all about the school in just a few minutes.",
+     "zh": "她叫小梅，短短幾分鐘內就把學校的大小事全告訴了我。"
+    },
+    {
+     "en": "She *had* just joined the basketball team and *was* excited about Sports Day.",
+     "zh": "她剛加入籃球隊，對運動會非常期待。"
+    },
+    {
+     "en": "After lunch, Mei *led* me back to class and introduced me to her group of friends.",
+     "zh": "午餐後，小梅帶我回到教室，把我介紹給她的朋友們。"
+    },
+    {
+     "en": "In the afternoon, we *had* PE class, and the teacher *gave* each team a basketball.",
+     "zh": "下午我們有體育課，老師給每隊各發了一顆籃球。"
+    },
+    {
+     "en": "I *had* never played on a team before, so I *felt* unsure of myself.",
+     "zh": "我從來沒在隊伍裡打過球，所以感到沒把握。"
+    },
+    {
+     "en": "Mei *held* out her hand and *said*, \"You're on my team — don't worry!\"",
+     "zh": "小梅伸出手說：「你在我這隊——別擔心！」"
+    },
+    {
+     "en": "I *took* a deep breath and *ran* onto the court with her.",
+     "zh": "我深吸一口氣，和她一起跑上球場。"
+    },
+    {
+     "en": "At first, I *stood* far from the action and *felt* lost on the big court.",
+     "zh": "起初，我站在遠離比賽的地方，在大球場上不知所措。"
+    },
+    {
+     "en": "Then, near the end of the game, Mei *threw* the ball to me from across the court.",
+     "zh": "然後，比賽快結束時，小梅從球場另一端把球傳給我。"
+    },
+    {
+     "en": "I *caught* it in surprise, turned around, and *shot* toward the basket.",
+     "zh": "我驚訝地接住球，轉過身，朝籃框射出。"
+    },
+    {
+     "en": "The ball *went* in, and everyone on our team *ran* toward me and cheered.",
+     "zh": "球進了，我們隊所有人都跑向我，歡聲雷動。"
+    },
+    {
+     "en": "Mei *gave* me a high five and *said*, \"I *knew* you could do it!\"",
+     "zh": "小梅和我擊掌說：「我就知道你可以的！」"
+    },
+    {
+     "en": "I *felt* warm inside for the first time that whole day.",
+     "zh": "那一整天，我第一次從心底感到溫暖。"
+    },
+    {
+     "en": "After school, Mei *showed* me around the building and *told* me the best spots on campus.",
+     "zh": "放學後，小梅帶我參觀整棟大樓，告訴我校園裡最棒的地方。"
+    },
+    {
+     "en": "At the school gate, I *met* Da-Wei, a friend of Mei's, who *had* the same comic book I *brought* from my old school.",
+     "zh": "在校門口，我認識了大偉——小梅的朋友，他有一本和我從舊學校帶來的一樣的漫畫書。"
+    },
+    {
+     "en": "Da-Wei and I talked about the story for so long that we *forgot* to go home on time.",
+     "zh": "大偉和我聊那本漫畫聊得太久，竟然忘了準時回家。"
+    },
+    {
+     "en": "When I finally *heard* my phone ring, I *told* my mom I *had* already *made* new friends.",
+     "zh": "當我終於聽到手機響，我告訴媽媽我已經交到新朋友了。"
+    },
+    {
+     "en": "On the bus ride home, I *wrote* in my journal about the whole day.",
+     "zh": "回家的公車上，我在日記裡記下了這一天的點點滴滴。"
+    },
+    {
+     "en": "I *thought* about how scared I *felt* in the morning, and how lucky I *was* now.",
+     "zh": "我想到早上有多害怕，也想到現在的自己有多幸運。"
+    },
+    {
+     "en": "The next morning, I *woke* up early, *put* on my uniform, and *felt* excited to see my new friends again.",
+     "zh": "隔天早上，我早早醒來，穿上制服，對再次見到新朋友感到興奮。"
+    }
+   ],
+   "verbs": [
+    {
+     "v": "come",
+     "ved": "came",
+     "vpp": "come",
+     "zh": "來"
+    },
+    {
+     "v": "wear",
+     "ved": "wore",
+     "vpp": "worn",
+     "zh": "穿著"
+    },
+    {
+     "v": "feel",
+     "ved": "felt",
+     "vpp": "felt",
+     "zh": "感覺"
+    },
+    {
+     "v": "take",
+     "ved": "took",
+     "vpp": "taken",
+     "zh": "拿取"
+    },
+    {
+     "v": "tell",
+     "ved": "told",
+     "vpp": "told",
+     "zh": "告訴"
+    },
+    {
+     "v": "stand",
+     "ved": "stood",
+     "vpp": "stood",
+     "zh": "站立"
+    },
+    {
+     "v": "say",
+     "ved": "said",
+     "vpp": "said",
+     "zh": "說"
+    },
+    {
+     "v": "be",
+     "ved": "was / were",
+     "vpp": "been",
+     "zh": "是；存在"
+    },
+    {
+     "v": "sit",
+     "ved": "sat",
+     "vpp": "sat",
+     "zh": "坐"
+    },
+    {
+     "v": "go",
+     "ved": "went",
+     "vpp": "gone",
+     "zh": "去"
+    },
+    {
+     "v": "speak",
+     "ved": "spoke",
+     "vpp": "spoken",
+     "zh": "說；演講"
+    },
+    {
+     "v": "find",
+     "ved": "found",
+     "vpp": "found",
+     "zh": "找到；發現"
+    },
+    {
+     "v": "eat",
+     "ved": "ate",
+     "vpp": "eaten",
+     "zh": "吃"
+    },
+    {
+     "v": "think",
+     "ved": "thought",
+     "vpp": "thought",
+     "zh": "想；認為"
+    },
+    {
+     "v": "have",
+     "ved": "had",
+     "vpp": "had",
+     "zh": "擁有；用餐"
+    },
+    {
+     "v": "lead",
+     "ved": "led",
+     "vpp": "led",
+     "zh": "領導"
+    },
+    {
+     "v": "give",
+     "ved": "gave",
+     "vpp": "given",
+     "zh": "給予"
+    },
+    {
+     "v": "hold",
+     "ved": "held",
+     "vpp": "held",
+     "zh": "握住；支撐"
+    },
+    {
+     "v": "run",
+     "ved": "ran",
+     "vpp": "run",
+     "zh": "跑；經營"
+    },
+    {
+     "v": "throw",
+     "ved": "threw",
+     "vpp": "thrown",
+     "zh": "丟"
+    },
+    {
+     "v": "catch",
+     "ved": "caught",
+     "vpp": "caught",
+     "zh": "抓；捉；捕"
+    },
+    {
+     "v": "shoot",
+     "ved": "shot",
+     "vpp": "shot",
+     "zh": "發射"
+    },
+    {
+     "v": "know",
+     "ved": "knew",
+     "vpp": "known",
+     "zh": "知道"
+    },
+    {
+     "v": "show",
+     "ved": "showed",
+     "vpp": "shown",
+     "zh": "表示；展現"
+    },
+    {
+     "v": "meet",
+     "ved": "met",
+     "vpp": "met",
+     "zh": "見面；相會"
+    },
+    {
+     "v": "bring",
+     "ved": "brought",
+     "vpp": "brought",
+     "zh": "帶來"
+    },
+    {
+     "v": "forget",
+     "ved": "forgot",
+     "vpp": "forgotten",
+     "zh": "忘記"
+    },
+    {
+     "v": "hear",
+     "ved": "heard",
+     "vpp": "heard",
+     "zh": "聽"
+    },
+    {
+     "v": "make",
+     "ved": "made",
+     "vpp": "made",
+     "zh": "製造"
+    },
+    {
+     "v": "write",
+     "ved": "wrote",
+     "vpp": "written",
+     "zh": "寫"
+    },
+    {
+     "v": "wake",
+     "ved": "woke",
+     "vpp": "woken",
+     "zh": "醒來"
+    },
+    {
+     "v": "put",
+     "ved": "put",
+     "vpp": "put",
+     "zh": "放置"
+    }
+   ],
+   "questions": [
+    {
+     "q": "How did the narrator feel when the teacher took them to the front of the class, and what did the narrator say?",
+     "hint": "用 feel、stand、say 回答",
+     "a": "The narrator felt nervous. The narrator stood at the front of the room and said a short greeting. (敘述者感到緊張。敘述者站在教室前面，說了簡短的問候語。)"
+    },
+    {
+     "q": "What happened when Mei threw the ball to the narrator during PE class?",
+     "hint": "用 catch、shoot、go 回答",
+     "a": "The narrator caught it in surprise, shot toward the basket, and the ball went in. (敘述者驚訝地接住球，朝籃框射出，球進了。)"
+    },
+    {
+     "q": "How did the narrator's feelings change from the morning to the end of the day?",
+     "hint": "用 feel、think、make 回答",
+     "a": "The narrator felt warm inside after making new friends. The narrator thought about how scared they felt in the morning and how lucky they were now. (敘述者交到新朋友後感到溫暖。敘述者想到早上有多害怕，也想到現在有多幸運。)"
     }
    ]
   }
