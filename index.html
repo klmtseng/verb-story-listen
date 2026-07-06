@@ -144,6 +144,11 @@
   .vt-table input.ok{border-color:var(--ok);background:#eafaf0;color:#166a3e;font-weight:700}
   .vt-table input.bad{border-color:#ea5455;background:#fdeeee;color:#b83b3b;font-weight:700}
   .cell-ans{font-size:11.5px;color:#b83b3b;margin-top:4px;font-weight:700}
+  .study-pat{background:#fffaf0;border:1px solid #ffe6bf;border-radius:10px;padding:10px 12px;
+    font-size:13px;line-height:1.7;color:#5c4a2e;margin:10px 0}
+  .study-pat b{color:#c8641a}
+  .step-label{display:inline-block;font-size:12px;font-weight:800;color:var(--accent);
+    background:#eef4ff;border-radius:8px;padding:2px 9px;margin-bottom:7px}
 </style>
 </head>
 <body>
@@ -203,7 +208,34 @@ function section(title, closedByDefault){
   return {sec, body};
 }
 
+function verbTableEl(verbs){
+  const wrap = document.createElement('div');
+  let rows = '<table><tr><th>Base 原形</th><th>Past 過去式</th><th>Past Participle 過去分詞</th></tr>';
+  verbs.forEach(v=>{
+    rows += `<tr><td class="base">${v.v}<span class="zh">${v.zh||''}</span></td><td>${v.ved}</td><td>${v.vpp}</td></tr>`;
+  });
+  wrap.innerHTML = rows + '</table>';
+  return wrap;
+}
+
 const GENRE = {narrative:['記敘','b-narrative'], dialogue:['對話','b-dialogue'], joke:['笑話','b-joke']};
+const GROUPINFO = {
+  aaa:{name:'三態全同',tip:'三個長得一模一樣（cut-cut-cut）。'},
+  aba:{name:'頭尾相同 A-B-A',tip:'只有中間變，第三態又變回原形（come-came-come）。'},
+  ought:{name:'ought / aught 家族',tip:'字尾變 -ought/-aught，都唸 [ɔt]（buy-bought-bought）。'},
+  ept:{name:'-ept 家族',tip:'字尾變 -ept（keep-kept-kept）。'},
+  dt:{name:'結尾變 t',tip:'字尾 d 換成 t、或加 t（feel-felt-felt）。'},
+  abb:{name:'母音變一次 A-B-B',tip:'母音只變一次，後兩態相同（win-won-won）。'},
+  aid:{name:'拼法小改裝',tip:'拼法小小變（say-said-said）。'},
+  iau:{name:'i-a-u 三段變',tip:'母音照 i→a→u 走（sing-sang-sung）。'},
+  ew:{name:'ew / own 家族',tip:'過去式 -ew、第三態 -own（know-knew-known）。'},
+  oen:{name:'o…en 家族',tip:'過去式變 o、第三態加 -en（speak-spoke-spoken）。'},
+  itten:{name:'雙寫 + en 家族',tip:'子音雙寫再加 -en（write-wrote-written）。'},
+  orn:{name:'ore / orn 家族',tip:'過去式 -ore、第三態 -orn（wear-wore-worn）。'},
+  solo:{name:'個性派',tip:'沒有規律，要一個一個記熟。'},
+  mixed:{name:'綜合',tip:'這篇混合各種變化，順便一起複習。'}
+};
+const REGULAR_NOTE = '💡 規則動詞只加 -ed（play → played → played）；<b>下面這些是要特別記的「不規則」動詞</b>。';
 
 function renderMenu(){
   app.innerHTML='';
@@ -213,6 +245,14 @@ function renderMenu(){
   const intro = document.createElement('div'); intro.className='menu-intro';
   intro.innerHTML = `共 ${DATA.stories.length} 篇故事，每篇專攻一組動詞。點一篇開始聽讀 👇`;
   app.appendChild(intro);
+  // 綜合複習入口
+  const rev = document.createElement('div'); rev.className='menu-item';
+  rev.style.background='linear-gradient(135deg,#eafaf0,#e5f6ff)';
+  rev.innerHTML = `<div class="num" style="background:#28c76f">🔁</div>
+    <div class="mtxt"><div class="mt">綜合複習測驗</div>
+    <div class="mz">跨全部故事，隨機抽 20 個動詞考三態</div></div><div class="arrow">›</div>`;
+  rev.addEventListener('click', renderReview);
+  app.appendChild(rev);
   DATA.stories.forEach((st,i)=>{
     const g = GENRE[st.genre] || ['故事','b-grp'];
     const item = document.createElement('div'); item.className='menu-item';
@@ -236,9 +276,22 @@ function renderStory(st){
   back.addEventListener('click', ()=>{ document.querySelectorAll('audio').forEach(a=>a.pause()); renderMenu(); });
   app.appendChild(back);
 
+  // ① 先學：這篇的動詞三態（先看熟再讀）
+  const scard = document.createElement('div'); scard.className='card';
+  const gi = GROUPINFO[st.group] || {name:'', tip:''};
+  const shead = document.createElement('div'); shead.className='sec-h'; shead.style.cursor='default';
+  shead.innerHTML = '<span>① 先學：這篇的動詞三態</span>';
+  const spat = document.createElement('div'); spat.className='study-pat';
+  spat.innerHTML = (gi.name ? `<b>規律：${gi.name}</b> — ${gi.tip}<br>` : '') + REGULAR_NOTE;
+  const snote = document.createElement('div'); snote.className='hint-audio'; snote.style.marginTop='8px';
+  snote.textContent = '👆 先看熟這幾個，再往下讀故事；最後用底下的表格默寫自測。';
+  scard.appendChild(shead); scard.appendChild(spat);
+  scard.appendChild(verbTableEl(st.verbs)); scard.appendChild(snote);
+  app.appendChild(scard);
+
   // story card
   const card = document.createElement('div'); card.className='card';
-  card.innerHTML = `<div class="story-title">${st.title}</div><div class="story-zh">${st.zh_title}</div>`;
+  card.innerHTML = `<div class="step-label">② 讀 &amp; 聽</div><div class="story-title">${st.title}</div><div class="story-zh">${st.zh_title}</div>`;
 
   // audio
   const arow = document.createElement('div'); arow.className='audio-row';
@@ -293,20 +346,9 @@ function renderStory(st){
   card.appendChild(tip);
   app.appendChild(card);
 
-  // verbs section
-  const vcard = document.createElement('div'); vcard.className='card';
-  const {sec:vsec, body:vbody} = section('📋 本篇動詞三態（'+st.verbs.length+' 個）', true);
-  let rows = '<table><tr><th>原形</th><th>過去式</th><th>過去分詞</th></tr>';
-  st.verbs.forEach(v=>{
-    rows += `<tr><td class="base">${v.v}<span class="zh">${v.zh}</span></td><td>${v.ved}</td><td>${v.vpp}</td></tr>`;
-  });
-  rows += '</table>';
-  vbody.innerHTML = rows;
-  vcard.appendChild(vsec); app.appendChild(vcard);
-
-  // quiz
+  // 讀後測驗
   const qcard = document.createElement('div'); qcard.className='card';
-  const {sec:qsec, body:qbody} = section('🧠 動動腦（用動詞回答看看）', false);
+  const {sec:qsec, body:qbody} = section('③ 讀後測驗（用動詞回答看看）', false);
   st.questions.forEach(q=>{
     const qd = document.createElement('div'); qd.className='q';
     qd.innerHTML = `<div class="qt">${q.q}</div><div class="qh">提示：${q.hint}</div>
@@ -328,12 +370,69 @@ function fieldTokens(v, k){ return k==='base' ? [v.v.toLowerCase()] : (k==='past
 function fieldShow(v, k){ return k==='base' ? v.v : (k==='past' ? v.ved : v.vpp); }
 function fieldFirst(v, k){ return fieldShow(v,k).split('/')[0].trim(); }
 
+// 共用：把三態默寫表格建進 area；getVerbs 每次呼叫回傳一份動詞清單（複習時可重新抽）
+function verbQuizTable(area, getVerbs){
+  area.innerHTML='';
+  const keys=['base','past','pp'];
+  const rows = getVerbs().map(v=> ({ v, shown: keys[Math.floor(Math.random()*3)] }));
+
+  const table=document.createElement('table'); table.className='vt-table';
+  table.innerHTML='<thead><tr><th>Base<br>原形</th><th>Past<br>過去式</th>'
+    + '<th>Past Participle<br>過去分詞</th></tr></thead>';
+  const tbody=document.createElement('tbody');
+  rows.forEach(r=>{
+    const tr=document.createElement('tr'); tr._q=r;
+    keys.forEach(k=>{
+      const td=document.createElement('td');
+      if(k===r.shown){ td.className='given'; td.textContent=fieldFirst(r.v,k); }
+      else{ td.innerHTML=`<input data-field="${k}" type="text" inputmode="text" autocapitalize="none" `
+        + `autocorrect="off" autocomplete="off" spellcheck="false"><div class="cell-ans"></div>`; }
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  });
+  table.appendChild(tbody); area.appendChild(table);
+
+  const score=document.createElement('div'); score.className='vt-score';
+  const check=document.createElement('button'); check.className='vt-check'; check.textContent='對答案 ✓';
+  area.appendChild(score); area.appendChild(check);
+
+  const inputs=[...area.querySelectorAll('input')];
+  inputs.forEach((inp,idx)=> inp.addEventListener('keydown',e=>{
+    if(e.key==='Enter'){ e.preventDefault(); if(idx+1<inputs.length) inputs[idx+1].focus(); else check.click(); }
+  }));
+
+  check.onclick=()=>{
+    if(check.dataset.done){ verbQuizTable(area, getVerbs); return; }  // 再測一次（重新出題）
+    let correct=0, total=0;
+    tbody.querySelectorAll('tr').forEach(tr=>{
+      const r=tr._q;
+      tr.querySelectorAll('input').forEach(inp=>{
+        const k=inp.dataset.field;
+        const val=(inp.value||'').trim().toLowerCase();
+        const ansEl=inp.parentElement.querySelector('.cell-ans');
+        total++;
+        if(val && fieldTokens(r.v,k).includes(val)){ inp.classList.add('ok'); correct++; ansEl.textContent=''; }
+        else{ inp.classList.add('bad'); ansEl.textContent='→ '+fieldShow(r.v,k); }
+        inp.disabled=true;
+      });
+    });
+    const pct = total? correct/total : 0;
+    const msg = pct===1 ? '太厲害了，全部答對！🎉' : pct>=0.8 ? '很棒，快全對了！💪'
+      : pct>=0.5 ? '不錯，再多練幾次會更熟 👍' : '沒關係，看正解複習後再測一次 🔁';
+    score.innerHTML=`答對 ${correct} / ${total}<span class="msg">${msg}</span>`;
+    score.style.display='block';
+    check.textContent='再測一次 ↺（重新隨機出題）'; check.dataset.done='1';
+    score.scrollIntoView({behavior:'smooth', block:'center'});
+  };
+}
+
 function renderVerbTest(st){
   const card = document.createElement('div'); card.className='card vt-card';
-  card.innerHTML = '<div class="sec-h" style="cursor:default"><span>✍️ 動詞三態自我測驗</span></div>';
+  card.innerHTML = '<div class="sec-h" style="cursor:default"><span>④ 三態默寫自測</span></div>';
   const intro = document.createElement('div'); intro.className='vt-intro';
-  intro.innerHTML = '下面是這篇故事的動詞表。每一列只給你三態中的<b>一態</b>（灰底那格），'
-    + '另外兩格請<b>親手打出來</b>（沒有選項、不會自動改字）。填完按「對答案」。';
+  intro.innerHTML = '每一列只給你三態中的<b>一態</b>（灰底那格），另外兩格請<b>親手打出來</b>'
+    + '（沒有選項、不會自動改字）。填完按「對答案」。';
   const eg = document.createElement('div'); eg.className='vt-eg';
   eg.innerHTML = '灰底 = 已給你的；白底空格 = 要你填。三欄 = Base（原形）／Past（過去式）／Past Participle（過去分詞）。';
   const area = document.createElement('div');
@@ -341,63 +440,41 @@ function renderVerbTest(st){
   start.textContent = '開始測驗 ▶︎（'+st.verbs.length+' 題）';
   card.appendChild(intro); card.appendChild(eg); card.appendChild(start); card.appendChild(area);
   app.appendChild(card);
+  start.onclick = ()=>{ start.style.display='none'; verbQuizTable(area, ()=> st.verbs); };
+}
 
-  function build(){
-    area.innerHTML=''; start.style.display='none';
-    const keys=['base','past','pp'];
-    const rows = st.verbs.map(v=> ({ v, shown: keys[Math.floor(Math.random()*3)] }));
+// 跨故事去重的完整動詞集
+function allVerbs(){
+  const seen={}, out=[];
+  DATA.stories.forEach(st=> st.verbs.forEach(v=>{ if(!seen[v.v]){ seen[v.v]=1; out.push(v); } }));
+  return out;
+}
+function sample(arr, n){
+  const a=arr.slice();
+  for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
+  return a.slice(0, Math.min(n, a.length));
+}
 
-    const table=document.createElement('table'); table.className='vt-table';
-    table.innerHTML='<thead><tr><th>Base<br>原形</th><th>Past<br>過去式</th>'
-      + '<th>Past Participle<br>過去分詞</th></tr></thead>';
-    const tbody=document.createElement('tbody');
-    rows.forEach(r=>{
-      const tr=document.createElement('tr'); tr._q=r;
-      keys.forEach(k=>{
-        const td=document.createElement('td');
-        if(k===r.shown){ td.className='given'; td.textContent=fieldFirst(r.v,k); }
-        else{ td.innerHTML=`<input data-field="${k}" type="text" inputmode="text" autocapitalize="none" `
-          + `autocorrect="off" autocomplete="off" spellcheck="false"><div class="cell-ans"></div>`; }
-        tr.appendChild(td);
-      });
-      tbody.appendChild(tr);
-    });
-    table.appendChild(tbody); area.appendChild(table);
+function renderReview(){
+  app.innerHTML=''; window.scrollTo(0,0);
+  document.getElementById('hTitle').textContent = '綜合複習測驗';
+  document.getElementById('hSub').textContent = '跨全部故事 · 隨機抽考三態';
+  const back = document.createElement('button'); back.className='backbtn';
+  back.innerHTML = '‹ 返回故事列表';
+  back.addEventListener('click', renderMenu);
+  app.appendChild(back);
 
-    const score=document.createElement('div'); score.className='vt-score';
-    const check=document.createElement('button'); check.className='vt-check'; check.textContent='對答案 ✓';
-    area.appendChild(score); area.appendChild(check);
-
-    const inputs=[...area.querySelectorAll('input')];
-    inputs.forEach((inp,idx)=> inp.addEventListener('keydown',e=>{
-      if(e.key==='Enter'){ e.preventDefault(); if(idx+1<inputs.length) inputs[idx+1].focus(); else check.click(); }
-    }));
-
-    check.onclick=()=>{
-      if(check.dataset.done){ build(); return; }  // 再測一次
-      let correct=0, total=0;
-      tbody.querySelectorAll('tr').forEach(tr=>{
-        const r=tr._q;
-        tr.querySelectorAll('input').forEach(inp=>{
-          const k=inp.dataset.field;
-          const val=(inp.value||'').trim().toLowerCase();
-          const ansEl=inp.parentElement.querySelector('.cell-ans');
-          total++;
-          if(val && fieldTokens(r.v,k).includes(val)){ inp.classList.add('ok'); correct++; ansEl.textContent=''; }
-          else{ inp.classList.add('bad'); ansEl.textContent='→ '+fieldShow(r.v,k); }
-          inp.disabled=true;
-        });
-      });
-      const pct = total? correct/total : 0;
-      const msg = pct===1 ? '太厲害了，全部答對！🎉' : pct>=0.8 ? '很棒，快全對了！💪'
-        : pct>=0.5 ? '不錯，再多練幾次會更熟 👍' : '沒關係，看正解複習後再測一次 🔁';
-      score.innerHTML=`答對 ${correct} / ${total}<span class="msg">${msg}</span>`;
-      score.style.display='block';
-      check.textContent='再測一次 ↺（重新隨機出題）'; check.dataset.done='1';
-      score.scrollIntoView({behavior:'smooth', block:'center'});
-    };
-  }
-  start.onclick=build;
+  const card = document.createElement('div'); card.className='card vt-card';
+  card.innerHTML = '<div class="sec-h" style="cursor:default"><span>🔁 綜合複習測驗</span></div>';
+  const intro = document.createElement('div'); intro.className='vt-intro';
+  const pool = allVerbs();
+  intro.innerHTML = `從<b>全部 ${pool.length} 個</b>學過的動詞裡隨機抽 <b>20 個</b>混著考（間隔＋交錯，最能記牢）。`
+    + '每列只給一態，另外兩格打字填。';
+  const area = document.createElement('div');
+  const start = document.createElement('button'); start.className='vt-start'; start.textContent='開始複習 ▶︎（隨機 20 題）';
+  card.appendChild(intro); card.appendChild(start); card.appendChild(area);
+  app.appendChild(card);
+  start.onclick = ()=>{ start.style.display='none'; verbQuizTable(area, ()=> sample(allVerbs(), 20)); };
 }
 
 let DATA = null;
