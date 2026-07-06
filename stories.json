@@ -7,7 +7,28 @@
   "verified_by": "Fable 5 自撰故事 + 動詞形態對照 verbs_grade7_v1.json 2026-07-06",
   "schema_version": 1,
   "count": 17,
-  "verification": "machine_gated(gate_stories.py) + model_reviewed(Fable 5);未經人工逐篇驗收——家長抽查後才可標 human_verified"
+  "verification": "machine_gated(gate_stories.py) + model_reviewed(Fable 5);未經人工逐篇驗收——家長抽查後才可標 human_verified",
+  "extra_verbs": [
+   {
+    "v": "dive",
+    "ved": "dived / dove",
+    "vpp": "dived",
+    "zh": "潛水"
+   },
+   {
+    "v": "lie",
+    "ved": "lied（說謊）/ lay（躺）",
+    "vpp": "lied（說謊）/ lain（躺）",
+    "zh": "說謊；躺"
+   },
+   {
+    "v": "spell",
+    "ved": "spelled / spelt",
+    "vpp": "spelled / spelt",
+    "zh": "拼字"
+   }
+  ],
+  "coverage_note": "故事涵蓋107/110;dive/lie/spell(變化形陷阱)由綜合複習測驗補足=測驗覆蓋110/110"
  },
  "stories": [
   {

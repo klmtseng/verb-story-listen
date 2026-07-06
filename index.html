@@ -436,16 +436,17 @@ function verbQuizTable(area, getVerbs){
     if(check.dataset.done){ verbQuizTable(area, getVerbs); return; }  // 再測一次（重新出題）
     let correct=0, total=0;
     tbody.querySelectorAll('tr').forEach(tr=>{
-      const r=tr._q;
+      const r=tr._q; let rowBad=false;
       tr.querySelectorAll('input').forEach(inp=>{
         const k=inp.dataset.field;
         const val=(inp.value||'').trim().toLowerCase();
         const ansEl=inp.parentElement.querySelector('.cell-ans');
         total++;
         if(val && fieldTokens(r.v,k).includes(val)){ inp.classList.add('ok'); correct++; ansEl.textContent=''; }
-        else{ inp.classList.add('bad'); ansEl.textContent='→ '+fieldShow(r.v,k); }
+        else{ inp.classList.add('bad'); ansEl.textContent='→ '+fieldShow(r.v,k); rowBad=true; }
         inp.disabled=true;
       });
+      if(rowBad) missAdd(r.v.v); else missDec(r.v.v);
       // 答完才顯示意思（灰底格下方），整張表變複習卡
       const gc=tr.querySelector('td.given');
       if(gc && r.v.zh && !gc.querySelector('.cell-mean')){
@@ -478,16 +479,32 @@ function renderVerbTest(st){
   start.onclick = ()=>{ start.style.display='none'; verbQuizTable(area, ()=> st.verbs); };
 }
 
-// 跨故事去重的完整動詞集
+// 跨故事去重的完整動詞集(含 meta.extra_verbs:故事沒涵蓋的 dive/lie/spell 由測驗補足)
 function allVerbs(){
   const seen={}, out=[];
   DATA.stories.forEach(st=> st.verbs.forEach(v=>{ if(!seen[v.v]){ seen[v.v]=1; out.push(v); } }));
+  (DATA.meta.extra_verbs||[]).forEach(v=>{ if(!seen[v.v]){ seen[v.v]=1; out.push(v); } });
   return out;
 }
-function sample(arr, n){
+function shuffle(arr){
   const a=arr.slice();
   for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; }
-  return a.slice(0, Math.min(n, a.length));
+  return a;
+}
+function sample(arr, n){ return shuffle(arr).slice(0, Math.min(n, arr.length)); }
+
+// 錯題本(localStorage):v -> 未清償的錯誤次數;答錯+1,整列全對-1
+const MISS_KEY='vs_miss';
+function missMap(){ try{ return JSON.parse(localStorage.getItem(MISS_KEY))||{}; }catch(e){ return {}; } }
+function missSave(m){ localStorage.setItem(MISS_KEY, JSON.stringify(m)); }
+function missAdd(v){ const m=missMap(); m[v]=(m[v]||0)+1; missSave(m); }
+function missDec(v){ const m=missMap(); if(m[v]){ m[v]--; if(m[v]<=0) delete m[v]; missSave(m); } }
+// 複習抽題:優先抽錯題本裡的(錯最多次優先,至多 12 題),其餘隨機補滿
+function reviewSample(pool, n){
+  const m=missMap();
+  const missed=pool.filter(v=>m[v.v]).sort((a,b)=>m[b.v]-m[a.v]).slice(0,12);
+  const restPool=pool.filter(v=>!missed.includes(v));
+  return shuffle(missed.concat(sample(restPool, n-missed.length)));
 }
 
 function renderReview(){
@@ -503,13 +520,14 @@ function renderReview(){
   card.innerHTML = '<div class="sec-h" style="cursor:default"><span>🔁 綜合複習測驗</span></div>';
   const intro = document.createElement('div'); intro.className='vt-intro';
   const pool = allVerbs();
-  intro.innerHTML = `從<b>全部 ${pool.length} 個</b>學過的動詞裡隨機抽 <b>20 個</b>混著考（間隔＋交錯，最能記牢）。`
-    + '每列只給一態，另外兩格打字填。';
+  const nMiss = Object.keys(missMap()).length;
+  intro.innerHTML = `從<b>全部 ${pool.length} 個</b>動詞（含 3 個故事沒教到的陷阱動詞 dive／lie／spell）抽 <b>20 題</b>。`
+    + (nMiss ? `<br>📒 錯題本裡有 <b>${nMiss}</b> 個動詞，會優先出現——答對一次就消掉一筆。` : '<br>答錯的動詞會記進錯題本，下次優先考。');
   const area = document.createElement('div');
-  const start = document.createElement('button'); start.className='vt-start'; start.textContent='開始複習 ▶︎（隨機 20 題）';
+  const start = document.createElement('button'); start.className='vt-start'; start.textContent='開始複習 ▶︎（20 題）';
   card.appendChild(intro); card.appendChild(start); card.appendChild(area);
   app.appendChild(card);
-  start.onclick = ()=>{ start.style.display='none'; verbQuizTable(area, ()=> sample(allVerbs(), 20)); };
+  start.onclick = ()=>{ start.style.display='none'; verbQuizTable(area, ()=> reviewSample(allVerbs(), 20)); };
 }
 
 // 深色模式（記住偏好）
