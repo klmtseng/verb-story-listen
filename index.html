@@ -133,13 +133,14 @@
   .vt-score{display:none;text-align:center;font-size:18px;font-weight:800;margin:14px 0 4px}
   .vt-score .msg{display:block;font-size:13px;font-weight:600;color:var(--sub);margin-top:3px}
   /* table quiz */
-  .vt-table{width:100%;border-collapse:collapse;margin-top:8px;table-layout:fixed}
-  .vt-table th{background:#eef4ff;color:var(--accent);font-size:12px;padding:8px 3px;
-    border:1px solid #dbe6f7;text-align:center;line-height:1.25}
-  .vt-table td{border:1px solid var(--line);padding:5px 4px;text-align:center;vertical-align:middle}
-  .vt-table td.given{background:#f0f2f5;font-weight:800;color:#333;font-size:15px}
-  .vt-table input{width:100%;box-sizing:border-box;font-size:15px;padding:9px 4px;
-    border:1.5px solid var(--line);border-radius:7px;text-align:center;outline:none}
+  .vt-table{width:100%;border-collapse:separate;border-spacing:6px;margin-top:8px;table-layout:fixed}
+  .vt-table th{background:#eef4ff;color:var(--accent);font-size:12px;padding:10px 3px;
+    border:none;border-radius:12px;text-align:center;line-height:1.25}
+  .vt-table td{border:none;padding:4px 2px;text-align:center;vertical-align:middle}
+  .vt-table td.given{background:#f0f2f5;font-weight:800;color:#333;font-size:15px;border-radius:14px;padding:12px 5px}
+  .vt-table input{width:100%;box-sizing:border-box;font-size:15px;padding:11px 5px;
+    border:1.5px solid var(--line);border-radius:12px;text-align:center;outline:none;
+    background:var(--card);color:var(--ink)}
   .vt-table input:focus{border-color:var(--accent)}
   .vt-table input.ok{border-color:var(--ok);background:#eafaf0;color:#166a3e;font-weight:700}
   .vt-table input.bad{border-color:#ea5455;background:#fdeeee;color:#b83b3b;font-weight:700}
@@ -149,11 +150,41 @@
   .study-pat b{color:#c8641a}
   .step-label{display:inline-block;font-size:12px;font-weight:800;color:var(--accent);
     background:#eef4ff;border-radius:8px;padding:2px 9px;margin-bottom:7px}
+
+  /* theme toggle */
+  header .wrap{position:relative}
+  .theme-btn{position:absolute;top:-2px;right:0;background:rgba(255,255,255,.22);border:none;
+    color:#fff;font-size:18px;width:40px;height:40px;border-radius:50%;cursor:pointer;line-height:1}
+  .rev-item{background:linear-gradient(135deg,#eafaf0,#e5f6ff)}
+
+  /* ===== 深色模式 ===== */
+  body.dark{--bg:#141a21;--card:#1e2530;--ink:#e7ecf3;--sub:#96a3b3;--accent:#5b95ff;
+    --verb:#ff8a75;--verbbg:#3a2622;--ok:#3ddc84;--line:#2d3743;--shadow:0 2px 14px rgba(0,0,0,.45)}
+  body.dark .s{background:#232c38}
+  body.dark .s:active{background:#2a3542}
+  body.dark .tbtn{background:#232c38;color:var(--ink)}
+  body.dark .tbtn:active{background:#2a3542}
+  body.dark .q{background:#232c38}
+  body.dark .q .qa{background:#12331f;color:#7ee2a8}
+  body.dark .menu-item:active{background:#2a3542}
+  body.dark .rev-item{background:linear-gradient(135deg,#16302a,#173039)}
+  body.dark .vt-card{border-color:#2f3f57}
+  body.dark .vt-eg{background:#232c38}
+  body.dark .vt-table th{background:#25303e;color:#8fb4ff}
+  body.dark .vt-table td.given{background:#2a3542;color:#e7ecf3}
+  body.dark .vt-table input.ok{background:#12331f;color:#7ee2a8}
+  body.dark .vt-table input.bad{background:#3a1f22;color:#ff9a9a}
+  body.dark .study-pat{background:#2a2517;border-color:#4a4024;color:#e7d3ad}
+  body.dark .study-pat b{color:#ffb066}
+  body.dark .step-label,body.dark .num{background:#25303e;color:#8fb4ff}
+  body.dark .vt-given{background:#3a2622;color:var(--verb)}
+  body.dark .b-grp{background:#2a3542;color:#9aa7b8}
 </style>
 </head>
 <body>
 <header>
   <div class="wrap">
+    <button id="themeToggle" class="theme-btn" aria-label="切換深色模式">🌙</button>
     <h1 id="hTitle">動詞故事聽讀 🎧</h1>
     <p id="hSub">邊聽、邊讀、邊記動詞三態</p>
   </div>
@@ -246,8 +277,7 @@ function renderMenu(){
   intro.innerHTML = `共 ${DATA.stories.length} 篇故事，每篇專攻一組動詞。點一篇開始聽讀 👇`;
   app.appendChild(intro);
   // 綜合複習入口
-  const rev = document.createElement('div'); rev.className='menu-item';
-  rev.style.background='linear-gradient(135deg,#eafaf0,#e5f6ff)';
+  const rev = document.createElement('div'); rev.className='menu-item rev-item';
   rev.innerHTML = `<div class="num" style="background:#28c76f">🔁</div>
     <div class="mtxt"><div class="mt">綜合複習測驗</div>
     <div class="mz">跨全部故事，隨機抽 20 個動詞考三態</div></div><div class="arrow">›</div>`;
@@ -276,18 +306,16 @@ function renderStory(st){
   back.addEventListener('click', ()=>{ document.querySelectorAll('audio').forEach(a=>a.pause()); renderMenu(); });
   app.appendChild(back);
 
-  // ① 先學：這篇的動詞三態（先看熟再讀）
+  // ① 先學：這篇的動詞三態（預設折疊，讓使用者自己選要不要先複習）
   const scard = document.createElement('div'); scard.className='card';
   const gi = GROUPINFO[st.group] || {name:'', tip:''};
-  const shead = document.createElement('div'); shead.className='sec-h'; shead.style.cursor='default';
-  shead.innerHTML = '<span>① 先學：這篇的動詞三態</span>';
+  const {sec:ssec, body:sbody} = section('① 先學：這篇的動詞三態（點開先複習，或直接往下讀）', true);
   const spat = document.createElement('div'); spat.className='study-pat';
   spat.innerHTML = (gi.name ? `<b>規律：${gi.name}</b> — ${gi.tip}<br>` : '') + REGULAR_NOTE;
   const snote = document.createElement('div'); snote.className='hint-audio'; snote.style.marginTop='8px';
-  snote.textContent = '👆 先看熟這幾個，再往下讀故事；最後用底下的表格默寫自測。';
-  scard.appendChild(shead); scard.appendChild(spat);
-  scard.appendChild(verbTableEl(st.verbs)); scard.appendChild(snote);
-  app.appendChild(scard);
+  snote.textContent = '想先複習就看這張表；想直接挑戰，收起來直接往下讀故事就好。';
+  sbody.appendChild(spat); sbody.appendChild(verbTableEl(st.verbs)); sbody.appendChild(snote);
+  scard.appendChild(ssec); app.appendChild(scard);
 
   // story card
   const card = document.createElement('div'); card.className='card';
@@ -476,6 +504,24 @@ function renderReview(){
   app.appendChild(card);
   start.onclick = ()=>{ start.style.display='none'; verbQuizTable(area, ()=> sample(allVerbs(), 20)); };
 }
+
+// 深色模式（記住偏好）
+const themeBtn = document.getElementById('themeToggle');
+const themeMeta = document.querySelector('meta[name="theme-color"]');
+function applyTheme(t){
+  const dark = t==='dark';
+  document.body.classList.toggle('dark', dark);
+  themeBtn.textContent = dark ? '☀️' : '🌙';
+  if(themeMeta) themeMeta.setAttribute('content', dark ? '#141a21' : '#4f8cff');
+}
+let theme = localStorage.getItem('vs_theme')
+  || (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+applyTheme(theme);
+themeBtn.onclick = ()=>{
+  theme = document.body.classList.contains('dark') ? 'light' : 'dark';
+  localStorage.setItem('vs_theme', theme);
+  applyTheme(theme);
+};
 
 let DATA = null;
 fetch('stories.json').then(r=>r.json()).then(d=>{ DATA=d; renderMenu(); })
