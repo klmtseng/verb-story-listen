@@ -549,7 +549,11 @@ themeBtn.onclick = ()=>{
 };
 
 let DATA = null;
-fetch('stories.json').then(r=>r.json()).then(d=>{ DATA=d; renderMenu(); })
+fetch('stories.json').then(r=>r.json()).then(d=>{ DATA=d;
+  // 深連結:#<story-id> 直接開該篇(給動詞地城「破關解鎖故事」跳轉用)
+  const want = decodeURIComponent((location.hash||'').replace('#',''));
+  const hit = want && d.stories.find(s=>s.id===want);
+  if(hit) renderStory(hit); else renderMenu(); })
 .catch(e=>{ app.innerHTML='<div class="card">載入失敗：'+e+'</div>'; });
 </script>
 </body>
